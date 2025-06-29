@@ -1,0 +1,134 @@
+@media (min-width: 1600px) and (max-width: 1800px) {
+     .container {
+          max-width: 1500px;
+          padding-left: 32px;
+          padding-right: 32px;
+     }
+
+
+     /* Hero section */
+     .lg\:w-3\/4 {
+          width: 65% !important;
+     }
+
+     .lg\:w-1\/4 {
+          width: 35% !important;
+     }
+
+     .max-w-\[500px\] {
+          max-width: 462px !important;
+     }
+
+     #content_tq {
+          margin: 0px 20px !important;
+     }
+
+     .backdrop-blur-sm.rounded-t-3xl.flex.items-center {
+          padding: 40px 70px 0px 70px !important;
+     }
+
+     .club-flex-slide.opacity-60.scale-95.rounded-2xl.shadow-lg.flex.items-center.justify-center.mx-2 {
+          width: 320px !important;
+          height: 180px !important;
+     }
+
+     .w-full.backdrop-blur-sm.rounded-t-3xl.flex.items-center {
+          padding: 0px !important;
+     }
+
+     /* Card grid */
+     .grid-cols-1.md\:grid-cols-4 {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+     }
+
+     .font-extrabold.italic.text-4xl.mx-8 {
+          font-size: 2rem !important;
+          line-height: 2rem;
+     }
+
+
+     .text-white.text-4xl.font-extrabold.mb-4 {
+          font-size: 1.6rem;
+     }
+
+     .text-white.text-lg.mb-2,
+     .text-white.text-xl.font-semibold.mb-2,
+     .text-white.text-lg.leading-relaxed.font-base {
+          font-size: 1rem;
+     }
+
+     /* Course slide */
+     .course-slide-wrap {
+          min-height: 380px;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+     }
+
+     .w-\[622px\] {
+          width: 520px !important;
+     }
+
+     .h-\[350px\] {
+          height: 290px !important;
+     }
+
+     .w-\[533px\] {
+          width: 420px !important;
+     }
+
+     .h-\[300px\] {
+          height: 240px !important;
+     }
+
+     .w-\[320px\] {
+          width: 260px !important;
+     }
+
+     .h-\[180px\] {
+          height: 140px !important;
+     }
+
+     /* Club video slide */
+     #club-slide {
+          max-width: 1100px;
+          margin-left: auto;
+          margin-right: auto;
+     }
+
+     /* Text size */
+     .truyenthong {
+          font-size: 3.2rem !important;
+     }
+
+     .hocchat {
+          margin-left: 3rem !important;
+     }
+
+     .text-orange-500.font-medium.text-2xl.mb-12.leading-tight.drop-shadow-lg {
+          font-size: 2.5rem;
+     }
+
+     .text-orange-500.font-medium.mb-12.max-w-4xl.leading-relaxed.drop-shadow {
+          font-size: 1.3rem;
+     }
+
+     /* Footer */
+     footer .container {
+          max-width: 1400px;
+          padding-left: 32px;
+          padding-right: 32px;
+     }
+
+
+     /* Tránh tràn lề */
+     body {
+          overflow-x: hidden;
+     }
+
+     #profile {
+          margin-bottom: 45px !important;
+          height: 800px;
+          max-width: 580px !important;
+     }
+}
