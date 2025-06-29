@@ -172,7 +172,7 @@
 
      #tongquan img.max-w-\[300px\] {
           max-width: 200px;
-          margin: 0 auto 1rem;
+          margin: auto;
      }
 
      #tongquan h1 {
@@ -183,7 +183,7 @@
 
      #tongquan p {
           font-size: 0.9rem !important;
-          margin-bottom: 1rem;
+          margin-bottom: 0rem !important;
      }
 
      /* Stats Cards */
