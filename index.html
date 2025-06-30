@@ -603,7 +603,7 @@
     <section class="bg-gradient-to-b from-[#FFC082] to-[#FF7F00] relative">
         <div class="container mx-auto club-video-desktop">
             <div class="text-center mb-8">
-                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg ttdpt">THỰC CHIẾN TRONG CÁC DỰ ÁN CÂU
+                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg ttdpt pt-12">THỰC CHIẾN TRONG CÁC DỰ ÁN CÂU
                     LẠC BỘ
                 </h2>
                 <p class="text-white font-semibold italic text-xl mb-4" style="padding-left: 6%; padding-right: 6%;">Các
@@ -622,7 +622,7 @@
                     </svg>
                 </button>
                 <!-- Slide video -->
-                <div id="club-slide" class="flex items-center justify-between gap-8 flex-1">
+                <div id="club-slide" class="flex items-center justify-between gap-8 flex-1 pb-12">
 
                 </div>
                 <!-- Nút phải -->
@@ -802,26 +802,26 @@
             </div>
 
             <!-- MOBILE SLIDER FOR TESTI -->
-            <div class="testi-slider-mobile  btn-mobile" style="display: none;" style="display:none;">
-                <div id="testi-slide-content" class="border-radius border-white"></div>
-            </div>
-            <div class="flex justify-between md:hidden">
-                <button id="testi-prev"
-                    class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
-                    style="margin-left: 25%;">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
-                        viewBox="0 0 24 24">
-                        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button id="testi-next"
-                    class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg  px-2"
-                    style="margin-right: 25%;">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
-                        viewBox="0 0 24 24">
-                        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+            <div class="testi-slider-mobile btn-mobile" style="display: none; position: relative;">
+                <div id="testi-slide-content" class="border-radius border-white" style="position: relative;">
+                    <button id="testi-prev"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                        style="position: absolute; left: 8%; top: 50%; transform: translateY(-50%); z-index: 1000;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <!-- JS sẽ render slide vào đây -->
+                    <button id="testi-next"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                        style="position: absolute; right: 8%; top: 50%; transform: translateY(-50%); z-index: 1000;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
 
