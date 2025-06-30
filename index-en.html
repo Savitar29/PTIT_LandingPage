@@ -12,37 +12,45 @@
     <link rel="stylesheet" href="media1.css">
     <link rel="stylesheet" href="media_mac.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile_responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
+
+<!-- Hihii sorry ae dev :))) Làm JSON lười quá nên tui làm như này cho nhanh. -->
+<!-- Hihii sorry ae dev :))) Làm JSON lười quá nên tui làm như này cho nhanh. -->
+<!-- Hihii sorry ae dev :))) Làm JSON lười quá nên tui làm như này cho nhanh. -->
+<!-- Hihii sorry ae dev :))) Làm JSON lười quá nên tui làm như này cho nhanh. -->
+<!-- Hihii sorry ae dev :))) Làm JSON lười quá nên tui làm như này cho nhanh. -->
+
+
 <body class="overflow-x-hidden text-lg ">
     <header class="shadow-sm sticky top-0 z-50" style="background-color: white; transition: top 0.3s ease-in-out;">
-
         <div class="container mx-auto px-6 py-4">
             <nav class="flex items-center justify-space">
                 <!-- Logo và tên ngành -->
                 <div class="flex items-center space-x-2">
-                    <img src="logo.png" alt="Logo" class="h-20" />
+                    <img src="logo.png" alt="Logo" class="h-20 logo-nav" />
                 </div>
                 <div class="flex-1 flex justify-center">
                     <div class="flex space-x-10">
                         <a href="#tongquan"
-                            class="text-orange-500 font-bold text-xl transition-colors duration-200 hover:text-orange-600"
-                            id="nav1">ABOUT PROGRAM</a>
+                            class="text-[#FF4C00] font-bold text-xl transition-colors duration-200 hover:text-orange-600 uppercase"
+                            id="nav1">About program</a>
                         <a href="#hocchat"
-                            class="text-orange-500 font-bold text-xl transition-colors duration-200 hover:text-orange-600"
-                            id="nav2">ACADEMIC EXCELLENCE</a>
+                            class="text-[#FF4C00] font-bold text-xl transition-colors duration-200 hover:text-orange-600 uppercase"
+                            id="nav2">Academic Excellence</a>
                         <a href="#lamsanh"
-                            class="text-orange-500 font-bold text-xl transition-colors duration-200 hover:text-orange-600"
-                            id="nav3">PROFESSIONAL MASTERY</a>
+                            class="text-[#FF4C00] font-bold text-xl transition-colors duration-200 hover:text-orange-600 uppercase"
+                            id="nav3">Professional Mastery</a>
                         <a href="#truyencamhung"
-                            class="text-orange-500 font-bold text-xl transition-colors duration-200 hover:text-orange-600"
-                            id="nav4">INSPIRATION</a>
+                            class="text-[#FF4C00] font-bold text-xl transition-colors duration-200 hover:text-orange-600 uppercase"
+                            id="nav4">Inspiration</a>
                     </div>
                 </div>
                 <div>
                     <div class="relative group p-4">
-                        <button class="flex items-center text-orange-500 font-bold text-xl focus:outline-none"
+                        <button class="flex items-center text-[#FF4C00] font-bold text-xl focus:outline-none"
                             onclick="toggleDropdown()">
                             <svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" stroke-width="2"
                                 viewBox="0 0 24 24">
@@ -59,44 +67,68 @@
                         </button>
                         <div class="absolute right-0 mt-2 w-24 bg-white rounded-md shadow-lg border border-gray-200 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                             id="lang-dropdown">
-                            <div class="py-1">
+                            <div class="py-1 lang">
                                 <button
-                                    class="block w-full text-left px-4 py-2 text-orange-500 hover:bg-orange-100 transition-colors duration-150"
+                                    class="block w-full text-left px-4 py-2 text-[#FF4C00] hover:bg-orange-100 transition-colors duration-150"
                                     onclick="setLang('VI')">VI</button>
                                 <button
-                                    class="block w-full text-left px-4 py-2 text-orange-500 hover:bg-orange-100 transition-colors duration-150"
+                                    class="block w-full text-left px-4 py-2 text-[#FF4C00] hover:bg-orange-100 transition-colors duration-150"
                                     onclick="setLang('ENG')">ENG</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Nút hamburger chỉ hiện trên mobile -->
+                <div class="block md:hidden ml-4">
+                    <button id="mobile-menu-btn" class="text-[#FF4C00] focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
-
-    <div>
+    <div style="min-height: 90vh;">
+        <!-- Menu mobile -->
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-orange-500 text-2xl font-bold transition-all duration-300 invisible opacity-0 md:hidden">
+            <a href="#tongquan" class="mobile-nav-link uppercase">About program</a>
+            <a href="#hocchat" class="mobile-nav-link uppercase">Academic Excellence</a>
+            <a href="#lamsanh" class="mobile-nav-link uppercase">Professional Mastery</a>
+            <a href="#truyencamhung" class="mobile-nav-link uppercase">Inspiration</a>
+        </div>
+        </header>
         <!-- Hero Section -->
         <section class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden"
-            style="background: url('back.png') center center/cover no-repeat; opacity: 1; min-height: 90vh;">
+            style="background: url('back.png') center center/cover no-repeat; opacity: 1;">
             <div class="container mx-auto  flex flex-col lg:flex-row items-center justify-between relative z-10">
                 <div class="lg:w-3/4 w-full text-left">
-                    <h1 class="text-orange-600 font-extrabold text-4xl md:text-5xl lg:text-6xl mb-12 leading-tight drop-shadow-lg truyenthong"
-                        id="title">
+                    <h1 class="hero-desktop bg-gradient-to-b from-[#FE7F00] to-[#F90D0D] bg-clip-text text-transparent  font-extrabold text-4xl md:text-5xl lg:text-6xl mb-12 leading-tight drop-shadow-lg truyenthong"
+                        id="title" style="padding: 20px 0px;">
                         MULTIMEDIA COMMUNICATION
                     </h1>
-                    <h2 class="text-orange-500 font-medium text-2xl md:text-3xl lg:text-3xl mb-12 leading-tight drop-shadow-lg"
+                    <h1 class="hero-mobile bg-gradient-to-b from-[#FE7F00] to-[#F90D0D] bg-clip-text text-transparent  font-extrabold text-xl md:text-xl lg:text-6xl mb-12 leading-tight drop-shadow-lg truyenthong"
+                        id="title" style="padding: 20px 0px; display: none;"> <span
+                            class="bg-gradient-to-b from-[#FE7F00] to-[#F90D0D] bg-clip-text text-transparent">MULTIMEDIA
+                        </span> <br><span
+                            class="bg-gradient-to-t from-[#FE7F00] to-[#F90D0D] bg-clip-text text-transparent">COMMUNICATION
+                        </span>
+                    </h1>
+                    <h2 class="text-[#FF581D] font-medium text-2xl md:text-3xl lg:text-4xl mb-12 leading-tight drop-shadow-lg"
                         id="slogan">
-                        Learn with depth – Create with expertise</br> – Inspire with impact!
+                        Learn with depth – Create with expertise – Inspire with impact!
                     </h2>
-                    <p class="text-orange-500 text-lg md:text-xl font-medium mb-12 me-24 max-w-4xl leading-relaxed drop-shadow"
-                        id="hero_desc" style="font-style: italic; font-weight: 300;">
-                        Multimedia Communication PTIT is proudly recognized as one of the </br> <span
-                            class="font-bold italic" style="font-weight: 600;">top 3 strategic disciplines</span>
-                        selected by the Ministry of Education and Training to pilot an elite training model for Industry
-                        4.0 technologies — under Government-approved Scheme 437 (February 2025).
+                    <p class="text-[#FF581D] text-lg md:text-xl font-medium mb-12 me-24 max-w-4xl leading-relaxed drop-shadow"
+                        id="hero_desc_1" style="font-style: italic; font-weight: 300;">
+                        Multimedia Communication PTIT is proudly recognized as <span id="hero_desc_2"
+                            class="font-bold italic" style="font-weight: 600;"> one of the top 3 strategic
+                            disciplines</span> selected by the Ministry of Education and Training to pilot an elite
+                        training model for Industry 4.0 technologies — under Government-approved Scheme 437 (February
+                        2025).
                     </p>
                     <button
-                        class="hero-button-gradient font-extrabold text-xl px-8 py-3 rounded-full shadow-lg flex items-center group go-hover"
+                        class="hero-button-gradient font-extrabold text-xl px-8 py-3 rounded-full shadow-lg flex items-center group go-hover text-[#FF581D]"
                         id="discover">
                         Explore Now
                         <span class="arrow ml-2 flex items-center">
@@ -125,16 +157,16 @@
                     style="min-height: 350px;">
                     <img src="beiu.png" alt="" class="max-w-[300px] ml-10 beiu-hover ">
                     <div class="items-center flex flex-col justify-center text-center w-full h-full min-h-[300px]">
-                        <h1 class="text-[#FF4C00] font-bold text-5xl md:text-5xl lg:text-5xl mb-8 leading-tight drop-shadow-lg"
+                        <h1 class="text-[#FF4C00] font-bold text-5xl md:text-5xl lg:text-5xl mb-8 leading-tight drop-shadow-lg uppercase"
                             id="overview">
-                            ABOUT PROGRAM</h1>
+                            About program</h1>
                         <p class="text-[#FF4C00] text-lg md:text-2xl mb-8 max-w-4xl leading-relaxed mx-auto"
                             id="content_tq">
                             Anticipating the demands of the Industry 4.0 era, PTIT officially launched its Multimedia
-                            Communication undergraduate program in 2015 — becoming </br> <span
-                                class="font-bold italic">the first</span> university in Vietnam to
-                            offer formal training in this field. Here, you’ll master cutting-edge technologies to create
-                            impactful media products for a rapidly evolving digital world.
+                            Communication undergraduate program in 2015 — becoming the <span class="font-bold italic"
+                                style="font-weight: 600;"> first university</span> in Vietnam to offer formal training
+                            in this field. Here, you’ll master cutting-edge technologies to create impactful media
+                            products for a rapidly evolving digital world.
                         </p>
                     </div>
                 </div>
@@ -146,21 +178,21 @@
                 <div class="bg-white rounded-3xl p-6 text-center card-hover"
                     style="color: #FF7F00; box-shadow: 0 0 20px #ebba70, 0 0 20px #ffe2b7 inset;">
                     <div class="rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <img src="book.png" class="w-20 h-20" alt="">
+                        <img src="book.png" class="w-20 h-20 img-cards" alt="">
                     </div>
                     <h3 class="font-bold text-3xl mb-3 leading-tight">CURRICULUM STRUCTURE</h3>
-                    <p class="text-base mb-2 mt-8">Designed for the future - a balanced blend of theory and hands-on
-                        practice</p>
+                    <p class="text-base mb-2 mt-8">Designed for the future — a balanced blend of theory and hands-on
+                        practice.
                 </div>
 
                 <!-- Card 2 - Mức lương ra trường -->
                 <div class="bg-white rounded-3xl p-6 text-center card-hover"
                     style="color: #FF7F00; box-shadow: 0 0 20px #ebba70, 0 0 20px #ffe2b7 inset;">
                     <div class="rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <img src="money.png" class="w-20 h-20" alt="">
+                        <img src="money.png" class="w-20 h-20 img-cards" alt="">
                     </div>
                     <h3 class="font-bold text-3xl mb-3 leading-tight">GRADUATE STARTING SALARY</h3>
-                    <p class="text-xl font-bold mb-2">From </p>
+                    <p class="text-xl font-bold mb-2">From</p>
                     <div class="text-6xl font-bold mb-1">9M+</div>
                     <p class="text-base">with less than 1 year of experience</p>
                 </div>
@@ -169,24 +201,23 @@
                 <div class="bg-white rounded-3xl p-6 text-center card-hover"
                     style="color: #FF7F00; box-shadow: 0 0 20px #ebba70, 0 0 20px #ffe2b7 inset;">
                     <div class="rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <img src="brief.png" class="w-20 h-20" alt="">
+                        <img src="brief.png" class="w-20 h-20 img-cards" alt="">
                     </div>
                     <h3 class="font-bold text-3xl mb-3 leading-tight">JOB OPPORTUNITY</h3>
                     <div class="text-6xl font-bold mb-1">95%</div>
-                    <p class="text-base">of graduates secure </br> employment soon after graduation</p>
+                    <p class="text-base px-2">of graduates secure employment soon after graduation.</p>
                 </div>
 
                 <!-- Card 4 - ĐA DẠNG PHƯƠNG THỨC TUYỂN SINH -->
                 <div class="bg-white rounded-3xl p-6 text-center card-hover"
                     style="color: #FF7F00; box-shadow: 0 0 20px #ebba70, 0 0 20px #ffe2b7 inset;">
                     <div class="rounded-xl flex items-center justify-center mx-auto mb-4">
-                        <img src="medal.png" class="w-20 h-20" alt="">
+                        <img src="medal.png" class="w-20 h-20 img-cards" alt="">
                     </div>
                     <h3 class="font-bold text-3xl mb-3 leading-tight">FLEXIBLE ADMISSIONS</h3>
-                    <p class="text-base mb-2"> <a
+                    <p class="text-base mb-2"><a
                             href="https://tuyensinh.ptit.edu.vn/thong-bao-phuong-thuc-tuyen-sinh-dai-hoc-he-chinh-quy-nam-2025/"
-                            class="italic underline">Five admission</a> </br> pathways tailored to meet </br> students'
-                        goals
+                            class="italic underline">Five admission pathways</a> tailored to meet students' goals.
                     </p>
                 </div>
 
@@ -198,34 +229,53 @@
     <section class="py-12"
         style="background: radial-gradient(circle at center, #FFF5ED 0%, #FFD7B4 52%, #FFC888 100%);  position: relative;"
         id="hocchat">
+        <h1 class="hidden text-extrabold" id="hocchet-section">ACADEMIC EXCELLENCE</h1>
         <span
-            style="position: absolute; top: 50%; transform: translateY(-50%) rotate(-180deg); font-size: 6rem; padding: 20px 0px; font-weight: bold; letter-spacing: 0.05em; writing-mode: vertical-rl; z-index: 10; font-family: 'Inter', Inter, sans-serif; line-height: 1.5; white-space: nowrap;"
+            style="position: absolute; top: 50%; transform: translateY(-50%) rotate(-180deg); font-size: 5rem; padding: 20px 0px; font-weight: bold; letter-spacing: 0.05em; writing-mode: vertical-rl; z-index: 10; font-family: 'Inter', Inter, sans-serif; line-height: 1.5; white-space: nowrap;"
             class="ml-24 text-white/40 hocchat"> ACADEMIC EXCELLENCE
         </span>
         <div class="container mx-auto" style="padding-left: 6%; padding-right: 6%;">
-            <!-- Gen Z Quote Section -->
-            <div class="bg-white rounded-3xl p-6 text-center card-hover"
+            <!-- Gen Z Quote Section (desktop) -->
+            <div class="bg-white rounded-3xl p-6 text-center card-hover genz-quote-desktop"
                 style="color: #FF7F00; box-shadow: 0 0 20px #ebba70, 0 0 20px #ffe2b7 inset;">
                 <div class="flex items-center justify-space ">
-                    <div class="w-1/2 pr-10">
-                        <h2 class="text-5xl font-bold pb-1 pt-1"
-                            style="background: linear-gradient(90deg, #FF8000, #FF5900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
-                            Gen Z choose <span class="text-yellow-200">“Quality”</span><br />
-                            not just <span class="text-yellow-200">“Brand”</span>
+                    <div class="w-2/3 pr-10">
+                        <h2 class="text-5xl font-bold pb-1 pt-1 bg-gradient-to-b from-[#FF8000] to-[#FF5900] bg-clip-text text-transparent "
+                            style=" -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
+                            Gen Z choose <span class="text-yellow-200">"Quality"</span><br />
+                            not just <span class="text-yellow-200">"Brand"</span>
                         </h2>
                     </div>
-                    <div class="flex">
+                    <div class="flex w-2/3">
                         <img src="6.png" alt="" class="">
                         <div class="">
                             <div class="relative">
                                 <h3
                                     class="text-5xl font-bold pt-6 bg-gradient-to-b from-[#FF8020] to-[#FF8000] text-transparent bg-clip-text pb-1 text-left">
-                                    Distinct advantages</h3>
-                                <p class="text-[#FF7A1B] text-lg leading-relaxed pt-2 text-left">that empower PTIT
-                                    Multimedia Communication </br>students to build their unique identity in
-                                    the digital transformation era.
+                                    Advantages </h3>
+                                <p class="text-[#FF7A1B] text-lg leading-relaxed pt-2 text-left "
+                                    style="padding-right: 15%;">
+                                    that empower PTIT Multimedia Communication students to build their unique identity
+                                    in the digital transformation era.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gen Z Quote Section (mobile) -->
+            <div class="genz-quote-mobile bg-white rounded-3xl p-6 text-center card-hover"
+                style="display:none; max-width: 420px; margin: 0 auto; background: #fff; border-radius: 1.5rem; border: 2px solid #FFB97A; padding: 1.5rem 1rem; text-align: center;">
+                <h2
+                    style="font-size: 1.5rem; font-weight: bold; background: linear-gradient(90deg, #F89A3D, #FF6100); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; margin-bottom: 0.5rem; padding: 10px 0px; line-height: 1.2;">
+                    Gen Z choose "Quality"<br>Not just "Brand"</h2>
+                <hr style="border: none; border-top: 2px solid #FFB97A; margin: 0.7rem 0 1.2rem 0;">
+                <div style="display: flex; align-items: flex-start; justify-content: center; gap: 0.7rem;" class="px-2">
+                    <img src="6.png" alt="" class="" style="height: 120px;">
+                    <div style="text-align: left;">
+                        <span style="font-size: 1.2rem; font-weight: bold; color: #FF7F00;">Advantages</span>
+                        <div style="font-size: 0.95rem; color: #FF7A1B; line-height: 1.4; ">that empower PTIT Multimedia
+                            Communication students to build their unique identity in the digital transformation era.
                         </div>
                     </div>
                 </div>
@@ -247,7 +297,7 @@
                     </div>
                     <div class="ml-auto">
                         <div class="rounded-xl flex items-center justify-center mx-auto">
-                            <img src="idea.png" alt="">
+                            <img src="idea.png" alt="" class="img-notes">
                         </div>
                     </div>
                 </div>
@@ -255,8 +305,8 @@
                 <div class="flex items-center bg-white rounded-2xl p-6 card-hover"
                     style="color: #FF7F00; box-shadow: 0 0 20px #ebba70, 0 0 20px #ffe2b7 inset;">
                     <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mr-8 flex-shrink-0">
-                        <h1
-                            class="text-[#FF7F00] font-extrabold text-4xl md:text-5xl lg:text-7xl leading-tight drop-shadow-lg ml-4">
+                        <h1 class="text-[#FF7F00] font-extrabold text-4xl md:text-5xl lg:text-7xl leading-tight
+                            drop-shadow-lg ml-4">
                             02</h1>
                     </div>
                     <div class="text-[#FF7F00]">
@@ -271,7 +321,7 @@
                     </div>
                     <div class="ml-auto">
                         <div class="rounded-xl flex items-center justify-center mx-auto">
-                            <img src="school.png" alt="">
+                            <img src="school.png" alt="" class="img-notes">
                         </div>
                     </div>
                 </div>
@@ -298,7 +348,7 @@
                     </div>
                     <div class="ml-auto">
                         <div class="rounded-xl flex items-center justify-center mx-auto">
-                            <img src="book_2.png" alt="">
+                            <img src="book_2.png" alt="" class="img-notes">
                         </div>
                     </div>
                 </div>
@@ -319,7 +369,7 @@
                     </div>
                     <div class="ml-auto">
                         <div class="rounded-xl flex items-center justify-center mx-auto">
-                            <img src="student.png" alt="">
+                            <img src="student.png" alt="" class="img-notes">
                         </div>
                     </div>
                 </div>
@@ -338,7 +388,7 @@
                     </div>
                     <div class="ml-auto">
                         <div class="rounded-xl flex items-center justify-center mx-auto">
-                            <img src="book_3.png" alt="">
+                            <img src="book_3.png" alt="" class="img-notes">
                         </div>
                     </div>
                 </div>
@@ -353,60 +403,161 @@
                     <div class="text-[#FF7F00]">
                         <h3 class="font-bold text-2xl mb-3">Global exchange opportunities</h3>
                         <p class="text-base">• Immerse yourself in international academic environments through
-                            competitions and <a
+                            competitions, <a
                                 href="https://www.facebook.com/ptit.cie/posts/pfbid02df8qvi7nQtxurfKNz8iaPZzF3LfbUFHasWvTY5NZjNsWQ3Xjs9t9gfPcc4did5fvl?rdid=sds9qorkQb6iyb2A#"
-                                class="underline">exchange programs</a> with universities such as Chung-Ang University
+                                class="underline">, exchange programs</a> with universities such as Chung-Ang University
                             (Korea), Queensland University of Technology (Australia), and the University of Canberra
                             (Australia), etc.</p>
                     </div>
                     <div class="ml-auto">
                         <div class="rounded-xl flex items-center justify-center mx-auto">
-                            <img src="quote6.png" alt="">
+                            <img src="quote6.png" alt="" class="img-notes">
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- 06 Notes Mobile -->
+            <div class="notes-mobile" style="display: none;">
+                <div class="note-mb card-hover">
+                    <div class="note-mb-header">
+                        <h1>01</h1>
+                        <h3>Advanced tech mindset</h3>
+                        <img src="idea.png" alt="" class="img-notes">
+                    </div>
+                    <p>• Master technology and turn AI into a powerful personal assistant to streamline your work.</p>
+                </div>
+
+                <div class="note-mb card-hover">
+                    <div class="note-mb-header">
+                        <h1>02</h1>
+                        <h3>Modern facilities & High - quality learning environment</h3>
+                        <img src="school.png" alt="" class="img-notes">
+                    </div>
+                    <p>• Experience a fully equipped studio with professional-grade cameras, green screens, and lighting
+                        systems.</p>
+                    <p>• Train in industry-standard sound studios for voice-over and high-quality podcast production.
+                    </p>
+                </div>
+
+                <div class="note-mb card-hover">
+                    <div class="note-mb-header">
+                        <h1>03</h1>
+                        <h3>Diverse training programs</h3>
+                        <img src="book_2.png" alt="" class="img-notes">
+                    </div>
+                    <p>• Standard Program: A well-structured curriculum focused on developing mindset and real-world
+                        skills.</p>
+                    <p>• High-Quality Program: Core and specialized courses taught in English, with strong industry
+                        connections.</p>
+                    <p>• Work-Study Program: Flexible learning opportunities for working professionals and career
+                        switchers.</p>
+                </div>
+
+                <div class="note-mb card-hover">
+                    <div class="note-mb-header">
+                        <h1>04</h1>
+                        <h3>Attractive scholarship opportunities</h3>
+                        <img src="student.png" alt="" class="img-notes">
+                    </div>
+                    <p>• <a href="https://www.facebook.com/HocvienPTIT/posts/pfbid0phYaANnMojxUMsopEGbjGaRyP4jM5LjWMz78SUGiN1r4CN86McYis4oa3kbeQ25al?rdid=Wz5SvCAMD3YlBdzx#"
+                            class="underline">
+                            Entrance scholarships</a> worth up to 500 million VND, along with merit-based awards each
+                        semester and corporate-sponsored scholarships.
+                    </p>
+                </div>
+
+                <div class="note-mb card-hover">
+                    <div class="note-mb-header">
+                        <h1>05</h1>
+                        <h3>Igniting a passion for research</h3>
+                        <img src="book_3.png" alt="" class="img-notes">
+                    </div>
+                    <p>• Opportunities to take part in research projects and academic conferences, with the potential to
+                        publish in prestigious national and international journals.</p>
+                </div>
+
+                <div class="note-mb card-hover">
+                    <div class="note-mb-header">
+                        <h1>06</h1>
+                        <h3>Global exchange opportunities</h3>
+                        <img src="quote6.png" alt="" class="img-notes">
+                    </div>
+                    <p>• Immerse yourself in international academic environments through competitions,
+                        <a href="https://www.facebook.com/ptit.cie/posts/pfbid02df8qvi7nQtxurfKNz8iaPZzF3LfbUFHasWvTY5NZjNsWQ3Xjs9t9gfPcc4did5fvl?rdid=sds9qorkQb6iyb2A#"
+                            class="underline">
+                            exchange programs</a>
+                        with universities such as Chung-Ang University (Korea), Queensland University of Technology
+                        (Australia), and the University of Canberra (Australia), etc.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
     <!--LÀM SÀNH-->
-    <div class="w-full border-t border-b borde-white bg-gradient-to-b from-[#FF6600] to-[#FF9500]" id="lamsanh">
-        <div class="flex justify-center overflow-x-auto whitespace-nowrap p-2 relative "
-            style="background: linear-gradient(180deg, #FF8000 0%, #FF5900 100%); overflow: hidden;">
+    <div id="lamsanh"></div>
+    <div class="w-full border-t border-b borde-white bg-gradient-to-b from-[#FF6600] to-[#FF9500] lam-sanh-desktop">
+        <div class="flex justify-center overflow-x-auto whitespace-nowrap p-2 relative"
+            style="background: linear-gradient(180deg, #FF8000 0%, #FF5900 100%);">
+            <div
+                style="position:absolute; inset:0; background-image:url(texture_2.png); opacity: 0.2; pointer-events:none;">
+            </div>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">LÀM SÀNH</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">LÀM SÀNH</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">LÀM SÀNH</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">LÀM SÀNH</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">LÀM SÀNH</span>
+        </div>
+    </div>
+
+    <div class="w-full border-t border-b borde-white bg-gradient-to-b from-[#FF6600] to-[#FF9500] lam-sanh-mobile"
+        style="display: none;">
+        <div class="flex justify-center overflow-x-auto whitespace-nowrap p-2 relative"
+            style="background: linear-gradient(180deg, #FF8000 0%, #FF5900 100%);">
             <div
                 style="position:absolute; inset:0; background-image:url(texture.png); opacity: 0.2; pointer-events:none;">
             </div>
-            <!-- <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">PROFESSIONAL MASTERY</span>
-            <span class="text-3xl mx-4" -->
-            <!-- style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span> -->
-            <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">PROFESSIONAL MASTERY</span>
             <span class="text-3xl mx-4"
-                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
             <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">PROFESSIONAL
-                MASTERY</span>
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 5px 0px;">LÀM SÀNH</span>
             <span class="text-3xl mx-4"
-                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
             <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">PROFESSIONAL MASTERY</span>
-            <!-- <span class="text-3xl mx-4"
-                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 5px 0px;">LÀM SÀNH</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
             <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">PROFESSIONAL MASTERY</span> -->
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 5px 0px;">LÀM SÀNH</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
         </div>
     </div>
 
     <!-- Courses Section -->
-    <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082] py-16 relative">
+    <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082] pt-16 relative courses-desktop">
         <div class="container mx-auto">
             <div class="text-center mb-8">
-                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg">PRACTICAL SKILLS THROUGH SUBJECTS
-                </h2>
-                <p class="text-white font-semibold italic text-xl mb-4" style="padding-left: 6%; padding-right: 6%;">At
-                    PTIT, your portfolio is built from real projects, hands-on products, and practical experience.</p>
+                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg lamsanh-thucchien">THỰC CHIẾN THÔNG
+                    QUA CÁC MÔN HỌC</h2>
+                <p class="text-white font-semibold italic text-xl mb-4" style="padding-left: 6%; padding-right: 6%;">Tại
+                    PTIT, portfolio của bạn được tạo nên từ những sản phẩm, dự án, cọ xát thực tế.</p>
             </div>
             <div class="flex items-center justify-between border-1 gap-8">
                 <!-- Nút trái -->
@@ -433,46 +584,47 @@
         </div>
     </section>
 
-    <!--LÀM SÀNH-->
-    <div class="w-full border-t border-b borde-white bg-gradient-to-b from-[#FF6600] to-[#FF9500]">
-        <div class="flex justify-center overflow-x-auto whitespace-nowrap p-2 relative "
-            style="background: linear-gradient(180deg, #FF8000 0%, #FF5900 100%);  overflow: hidden;">
-            <div
-                style="position:absolute; inset:0; background-image:url(texture_2.png); opacity: 0.2; pointer-events:none;">
+    <!-- Courses Section Mobile -->
+    <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082]  relative md:hidden block courses-desktop">
+        <div class="container mx-auto px-2">
+            <div class="text-center mb-6">
+                <h2 class="text-white text-4xl font-extrabold mb-4 drop-shadow-lg">PRACTICAL SKILLS THROUGH SUBJECTS</h2>
+                <p class="text-white font-semibold italic text-base mb-4">TAt PTIT, your portfolio is built from real projects, hands-on products, and practical experience.</p>
             </div>
-            <!-- <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">PROFESSIONAL MASTERY</span>
-            <span class="text-3xl mx-4" -->
-            <!-- style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span> -->
-            <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">PROFESSIONAL MASTERY</span>
-            <span class="text-3xl mx-4"
-                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
-            <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">PROFESSIONAL
-                MASTERY</span>
-            <span class="text-3xl mx-4"
-                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
-            <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">PROFESSIONAL MASTERY</span>
-            <!-- <span class="text-3xl mx-4"
-                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
-            <span class="font-extrabold italic text-4xl mx-8"
-                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">PROFESSIONAL MASTERY</span> -->
+            <div class="flex items-center justify-center gap-2">
+                <div class="relative" style="width: 90vw; max-width: 400px; height: 220px;">
+                    <button id="course-prev-mb"
+                        class="w-10 h-10 flex items-center justify-center  transition-all duration-200 px-2"
+                        style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div id="course-video-mb" class="rounded-2xl overflow-hidden shadow-lg bg-white object-fit: contain"
+                        style="width: 100%; height: 100%; position: relative; z-index: 1;">
+                        <!-- video + thumbnail -->
+                    </div>
+                    <button id="course-next-mb"
+                        class="w-10 h-10 flex items-center justify-center  transition-all duration-200 px-2"
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!--CLUB VIDEO-->
-    <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082] py-16 relative">
-        <div class="container mx-auto">
+    <section class="bg-gradient-to-b from-[#FFC082] to-[#FF7F00] relative">
+        <div class="container mx-auto club-video-desktop">
             <div class="text-center mb-8">
-                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg ttdpt">PRACTICAL SKILLS THROUGH CLUB
-                    PROJECTS
+                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg ttdpt pt-12">PRACTICAL SKILLS THROUGH CLUB PROJECTS
                 </h2>
-                <p class="text-white font-semibold italic text-xl mb-4" style="padding-left: 6%; padding-right: 6%;">
-                    Dedicated clubs for Multimedia Communication students: such as PTV - PTIT Multimedia students
-                    channel and the PTIT Podcast Club, etc… provide valuable opportunities to produce real - world media
-                    projects, enhance expertise, and develop skills under the guidance of experienced faculty.</p>
+                <p class="text-white font-semibold italic text-xl mb-4" style="padding-left: 6%; padding-right: 6%;">Dedicated clubs for Multimedia Communication students: such as PTV - PTIT Multimedia students channel and the PTIT Podcast Club, etc… provide valuable opportunities to produce real - world media projects, enhance expertise, and develop skills under the guidance of experienced faculty.</p>
             </div>
             <div class="flex items-center justify-between border-1 gap-8">
                 <!-- Nút trái -->
@@ -484,7 +636,7 @@
                     </svg>
                 </button>
                 <!-- Slide video -->
-                <div id="club-slide" class="flex items-center justify-between gap-8 flex-1">
+                <div id="club-slide" class="flex items-center justify-between gap-8 flex-1 pb-12">
 
                 </div>
                 <!-- Nút phải -->
@@ -499,114 +651,190 @@
         </div>
     </section>
 
+    <!-- CLUB VIDEO MOBILE -->
+    <section class="bg-gradient-to-b from-[#FFC082] to-[#FF7F00] py-10 relative md:hidden block">
+        <div class="container mx-auto px-2">
+            <div class="text-center mb-6">
+                <h2 class="text-white text-4xl font-extrabold mb-4 drop-shadow-lg">PRACTICAL SKILLS THROUGH CLUB PROJECTS
+                </h2>
+                <p class="text-white font-semibold italic text-base mb-4">Dedicated clubs for Multimedia Communication students: such as PTV - PTIT Multimedia students channel and the PTIT Podcast Club, etc… provide valuable opportunities to produce real - world media projects, enhance expertise, and develop skills under the guidance of experienced faculty.</p>
+            </div>
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="relative" style="width: 90vw; max-width: 400px; height: 220px;">
+                    <button id="club-prev-mb"
+                        class="w-10 h-10 flex items-center justify-center transition-all duration-200 px-2"
+                        style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div id="club-video-mb" class="rounded-2xl overflow-hidden shadow-lg bg-white"
+                        style="width: 100%; height: 100%; position: relative; z-index: 1;">
+                        <!-- JS sẽ render video/ảnh vào đây -->
+                    </div>
+                    <button id="club-next-mb"
+                        class="w-10 h-10 flex items-center justify-center transition-all duration-200 px-2"
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!--TRUYỀN CẢM HỨNG-->
+    <div id="truyencamhung"></div>
+    <div class="w-full border-t border-b borde-white bg-gradient-to-b from-[#FF6600] to-[#FF9500] lam-sanh-desktop">
+        <div class="flex justify-center overflow-x-auto whitespace-nowrap p-2 relative"
+            style="background: linear-gradient(180deg, #FF8000 0%, #FF5900 100%);">
+            <div
+                style="position:absolute; inset:0; background-image:url(texture_2.png); opacity: 0.2; pointer-events:none;">
+            </div>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">TRUYỀN CẢM HỨNG</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 20px 0px;">TRUYỀN CẢM HỨNG</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 20px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 20px 0px;">TRUYỀN CẢM HỨNG</span>
+        </div>
+    </div>
+
+    <div class="w-full border-t border-b borde-white bg-gradient-to-b from-[#FF6600] to-[#FF9500] lam-sanh-mobile"
+        style="display: none;">
+        <div class="flex justify-center overflow-x-auto whitespace-nowrap p-2 relative"
+            style="background: linear-gradient(180deg, #FF8000 0%, #FF5900 100%);">
+            <div
+                style="position:absolute; inset:0; background-image:url(texture.png); opacity: 0.2; pointer-events:none;">
+            </div>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #F6FF00; filter: drop-shadow(0 0 8px #F6FF00); padding: 5px 0px;">TRUYỀN CẢM HỨNG</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
+            <span class="font-extrabold italic text-4xl mx-8"
+                style="color: #fff; filter: drop-shadow(0 0 8px #fff); padding: 5px 0px;">TRUYỀN CẢM HỨNG</span>
+            <span class="text-3xl mx-4"
+                style="color: #fff; filter: drop-shadow(0 0 6px #F6FF00); padding: 5px 0px;">•</span>
+        </div>
+    </div>
 
     <!--GẶP GỠ NHỮNG "CHIẾN BINH" NỔI BẬT CỦA NGÀNH-->
-    <section class="gradient-bg pb-24 pt-16 bg-gradient-to-b from-[#FFBD71] to-[#FF8000]" style="position: relative;"
-        id="truyencamhung">
-        <span
-            style="position: absolute; top: 28%; transform: translateY(-50%) rotate(-180deg); font-size: 6rem; padding: 20px 0px; font-weight: bold; letter-spacing: 0.05em; writing-mode: vertical-rl; z-index: 10; font-family: 'Inter', Inter, sans-serif; line-height: 1.5; white-space: nowrap;"
-            class="ml-12 text-white/40" id="truyencamhung_text"> INSPIRATION
-        </span>
+    <section class="gradient-bg pb-24 pt-16 bg-gradient-to-b from-[#FFBD71] to-[#FF8000] !important"
+        style="position: relative;" id="truyencamhung">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
-                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg">MEET THE STANDOUT STUDENTS OF
-                    MULTIMEDIA COMMUNICATION</h2>
+                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">Meet the standout students of Multimedia Communication</h2>
             </div>
             <div class="testi-grid pl-8 pr-8">
 
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="beiu1.png" alt="Đinh Thị Diễm Quỳnh">
-                        <div class="testi-name text-white border">Dinh Thi Diem Quynh - Class of D21</div>
+                        <div class="testi-name text-white border">Dinh Thi Diem Quynh - D21</div>
                     </div>
                     <div class="testi-role text-white ">Senior student – MCN Team at Meta Ecom</div>
                     <p class="testi-quote text-white">
-                        "After four years at PTIT, I’ve gained both strategic thinking and hands-on experience through
-                        partnerships with businesses and various student-led activities"
+                        "After four years at PTIT, I’ve gained both strategic thinking and hands-on experience through partnerships with businesses and various student-led activities."
                     </p>
                 </div>
 
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="khanhduy.png" alt="Nhữ Khánh Duy">
-                        <div class="testi-name text-white border ">Nhu Khanh Duy - Class of D20</div>
+                        <div class="testi-name text-white border ">Nhu Khanh Duy - D20</div>
                     </div>
-                    <div class="testi-role text-white ">Corporate Communications Intern at Bosch Global Software
-                        Technologies Vietnam</div>
+                    <div class="testi-role text-white ">Corporate Communications Intern at Bosch Global Software Technologies Vietnam</div>
                     <p class="testi-quote text-white">
-                        "PTIT didn’t just teach me theory - it shaped the way I think and act like a true communications
-                        professional"
+                        "PTIT didn’t just teach me theory - it shaped the way I think and act like a true communications professional."
                     </p>
                 </div>
 
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="hongngoc.png" alt="Nguyễn Hồng Ngọc">
-                        <div class="testi-name text-white border">Nguyen Hong Ngoc – Class of D20</div>
+                        <div class="testi-name text-white border">Nguyen Hong Ngoc – D20</div>
                     </div>
                     <div class="testi-role text-white">PR & Internal Communication Executive at Relipa Co., Ltd.
                     </div>
                     <p class="testi-quote text-white">
-                        "Studying communication PTIT felt like working at a real agency — we didn’t just learn to work,
-                        we worked to learn"
+                        tudying communication PTIT felt like working at a real agency — we didn’t just learn to work, we worked to learn."
                     </p>
                 </div>
-
-
 
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="tiendat.png" alt="Lê Tiến Đạt">
-                        <div class="testi-name text-white border">Le Tien Dat – Class of D20</div>
+                        <div class="testi-name text-white border">Le Tien Dat – D20</div>
                     </div>
                     <div class="testi-role text-white ">Artist Manager at C-Global Entertainment</div>
                     <p class="testi-quote text-white">
-                        "A journey of a thousand miles begins with a single step. And for me, that first step was being
-                        a PTIT Multimedia Communication student"
+                        "A journey of a thousand miles begins with a single step. And for me, that first step was being a PTIT Multimedia Communication student."
                     </p>
                 </div>
 
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="thiyen.png" alt="Nguyễn Thị Yến">
-                        <div class="testi-name text-white border">Nguyen Thi Yen – Class of D17</div>
+                        <div class="testi-name text-white border">Nguyen Thi Yen – D17</div>
                     </div>
                     <div class="testi-role text-white ">Travel Content Creator</div>
                     <p class="testi-quote text-white">
-                        "By chance, I found myself in Multimedia Communication at PTIT — and before I knew it, the
-                        inspiring courses had guided me toward becoming a Travel Content Creator. Now, I’m doing what I
-                        love and living my passion. Thank you to all the teachers and to PTIT”
+                        "By chance, I found myself in Multimedia Communication at PTIT — and before I knew it, the inspiring courses had guided me toward becoming a Travel Content Creator. Now, I’m doing what I love and living my passion. Thank you to all the teachers and to PTIT”
                     </p>
                 </div>
 
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="tuanminh.png" alt="Nguyễn Quốc Tuấn Minh">
-                        <div class="testi-name text-white border">Nguyen Quoc Tuan Minh – Class of D17</div>
+                        <div class="testi-name text-white border">Nguyen Quoc Tuan Minh – D17</div>
                     </div>
                     <div class="testi-role text-white">Content Creator at MinhMinhMinh</div>
                     <p class="testi-quote text-white">
-                        "More than just knowledge, the Multimedia Communication environment at PTIT taught me how to
-                        proactively seek out opportunities. It also gave me lasting connections - people I can still
-                        count on today in my professional journey"
-                    </p>
+                        "More than just knowledge, the Multimedia Communication environment at PTIT taught me how to proactively seek out opportunities. It also gave me lasting connections - people I can still count on today in my professional journey."
                 </div>
+            </div>
 
+            <!-- MOBILE SLIDER FOR TESTI -->
+            <div class="testi-slider-mobile btn-mobile" style="display: none; position: relative;">
+                <div id="testi-slide-content" class="border-radius border-white" style="position: relative;">
+                    <button id="testi-prev"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                        style="position: absolute; left: 8%; top: 50%; transform: translateY(-50%); z-index: 1000;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <!-- JS sẽ render slide vào đây -->
+                    <button id="testi-next"
+                        class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                        style="position: absolute; right: 8%; top: 50%; transform: translateY(-50%); z-index: 1000;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
+
         <img src="line.png" class="flex item-center justify-center" style="margin: 0 auto; padding-top: 96px;">
 
         <!--Nơi thanh xuân không chỉ có deadline-->
-        <div class="pt-24">
+        <div class="pt-24 deadline">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-20">
-                    <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">Where youth is more
-                        than just deadlines
-                    </h2>
-                    <p class="text-white font-semibold italic text-xl mb-4" style="padding: 0px 150px;">Immerse yourself
-                        in the vibrant world of media events, academic competitions, industry workshops, and a wide
-                        range of dynamic student clubs.</p>
+                    <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">Where youth is more than just deadlines</h2>
+                    <p class="text-white font-semibold italic text-xl mb-4 deadline-p" style="padding: 0px 150px;">Immerse yourself in the vibrant world of media events, academic competitions, industry workshops, and a wide range of dynamic student clubs.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
@@ -617,22 +845,14 @@
                                 <img src="new1.png" alt="" class="rounded-2xl w-full">
                                 <span
                                     class="absolute top-2 right-2 bg-green-500 text-white text-sm font-semibold px-3 py-1 rounded-lg">
-                                    Comming Soon
+                                    Coming soon
                                 </span>
                             </div>
                             <div class="content-new">
                                 <a href="https://www.facebook.com/share/p/12LQRETTmVB/"
-                                    class="text-white text-base font-semibold mb-3 block hover:underline">
-                                    EXHIBITION & TALK SHOW – REFLECTING ON 100 YEARS OF REVOLUTIONARY JOURNALISM: FROM
-                                    TRADITION TO MODERNITY
+                                    class="text-white text-base font-semibold mb-3 block hover:underline">EXHIBITION & TALK SHOW – REFLECTING ON 100 YEARS OF REVOLUTIONARY JOURNALISM: FROM TRADITION TO MODERNITY
                                 </a>
-                                <p class="text-white text-sm leading-relaxed">
-                                    The celebration served as a moment to honor the proud legacy of Vietnam's
-                                    revolutionary journalism and featured insights from veteran journalists on the
-                                    challenges of media in the digital age. A parallel photo exhibition took viewers on
-                                    an emotional journey through the history of revolutionary journalism - from wartime
-                                    reporting and the subsidy era to the rise of modern journalism.
-
+                                <p class="text-white text-sm leading-relaxed text-new">The celebration served as a moment to honor the proud legacy of Vietnam's revolutionary journalism and featured insights from veteran journalists on the challenges of media in the digital age. A parallel photo exhibition took viewers on an emotional journey through the history of revolutionary journalism - from wartime reporting and the subsidy era to the rise of modern journalism.
                                 </p>
                             </div>
                         </div>
@@ -653,10 +873,7 @@
                                     class="text-white text-base font-semibold mb-3 block hover:underline">
                                     COMPETITION: MCA25 – MULTIMEDIA COMMUNICATION AWARDS 2025
                                 </a>
-                                <p class="text-white text-sm leading-relaxed">
-                                    Multimedia Communication Awards 2025 was a hands-on media competition exclusively
-                                    for Multimedia Communication students - where textbook knowledge was transformed
-                                    into high-impact, real-world campaigns that truly made a mark!
+                                <p class="text-white text-sm leading-relaxed text-new">Multimedia Communication Awards 2025 was a hands-on media competition exclusively for Multimedia Communication students - where textbook knowledge was transformed into high-impact, real-world campaigns that truly made a mark!
                                 </p>
                             </div>
                         </div>
@@ -674,14 +891,9 @@
                             </div>
                             <div class="content-new">
                                 <a href="https://www.facebook.com/share/p/1GBPfr9Egr/ "
-                                    class="text-white text-base font-semibold mb-3 block hover:underline">
-                                    TALKSHOW: APPLYING AI IN CONTENT CREATION AND MULTI - PLATFORM DISTRIBUTION
+                                    class="text-white text-base font-semibold mb-3 block hover:underline">TALKSHOW: APPLYING AI IN CONTENT CREATION AND MULTI - PLATFORM DISTRIBUTION
                                 </a>
-                                <p class="text-white text-sm leading-relaxed">
-                                    This talkshow offered an inspiring journey into the power of artificial intelligence
-                                    in the creative industry. While AI is becoming increasingly intelligent, it is still
-                                    the human touch - with critical thinking, storytelling ability, and empathy - that
-                                    ultimately shapes content that connects and resonates.
+                                <p class="text-white text-sm leading-relaxed text-new">This talkshow offered an inspiring journey into the power of artificial intelligence in the creative industry. While AI is becoming increasingly intelligent, it is still the human touch - with critical thinking, storytelling ability, and empathy - that ultimately shapes content that connects and resonates.
                                 </p>
                             </div>
                         </div>
@@ -700,12 +912,9 @@
                             <div class="content-new">
                                 <a href="https://www.facebook.com/share/p/1FV9GKEkBe/"
                                     class="text-white text-base font-semibold mb-3 block hover:underline uppercase">
-                                    MULTIMEDIA STUDENTS VISIT THE NATIONAL ASSEMBLY HOUSE
+                                    Sinh viên Khoa Đa phương tiện tham quan Nhà Quốc hội
                                 </a>
-                                <p class="text-white text-sm leading-relaxed">
-                                    This visit offered students not only a deeper understanding of Vietnam’s political
-                                    institutions, but also an opportunity to connect, learn, and explore the unique
-                                    cultural and architectural features of the National Assembly House.
+                                <p class="text-white text-sm leading-relaxed text-new">This visit offered students not only a deeper understanding of Vietnam’s political institutions, but also an opportunity to connect, learn, and explore the unique cultural and architectural features of the National Assembly House.
                                 </p>
                             </div>
                         </div>
@@ -716,29 +925,29 @@
     </section>
 
     <!--Cơ hội nghề nghiệp-->
-    <section class="bg-gradient-to-br from-[#FF8800] to-[#FFCA8D] py-24 relative overflow-hidden">
+    <section class="bg-gradient-to-br from-[#FF8800] to-[#FFCA8D] py-24 relative overflow-hidden career-section">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">DIVERSE CAREER
-                    OPPORTUNITIES
+                <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">Diverse career opportunities
                 </h2>
-                <p class="text-white font-semibold italic text-xl mb-4" style="padding: 0px 150px;">Your gateway to the
-                    creative industry</p>
+                <p class="text-white font-semibold italic text-xl mb-4 career-p" style="padding: 0px 150px;">Your gateway to the creative industry.</p>
             </div>
-
-            <div class="relative h-96 mx-auto max-w-7xl">
+            <div class="relative h-96 mx-auto max-w-7xl career-img-desktop">
                 <img src="career2.png" alt="">
+            </div>
+            <div class="relative h-96 mx-auto max-w-7xl md:hidden career-img-mobile">
+                <img src="career_mobile.png" alt="">
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-br from-[#FF851A] to-[#FFBF65] py-6">
+    <!-- Footer desktop-->
+    <footer class="bg-gradient-to-br from-[#FF851A] to-[#FFBF65] py-6 footer-desktop">
         <div class="container mx-auto px-2">
             <div class="flex">
                 <div class="w-2/3 pl-6">
                     <h3 class="text-white text-2xl font-extrabold drop-shadow-lg" style="padding: 0px 0px 10px 0px;">
-                        MULTIMEDIA COMMUNICATION PTIT</h3>
+                        TRUYỀN THÔNG ĐA PHƯƠNG TIỆN PTIT</h3>
                     <div class=" text-orange-100 text-base">
                         <div class="flex items-center" style="padding-bottom: 5px;">
                             <img src="footer_email.png" alt="" class="pl-2 pr-2" style="width: 45px;">
@@ -746,33 +955,82 @@
                         </div>
                         <div class="flex items-center" style="padding-bottom: 5px;">
                             <img src="footer_web.png" alt="" class="pl-2 pr-2" style="width: 45px;">
-                            <a href="https://dpt.ptit.edu.vn/"
-                                class="hover:text-white/60 transition-colors duration-200">https://dpt.ptit.edu.vn/</a>
+                            <a href="https://dpt.ptit.edu.vn/" target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200">https://dpt.ptit.edu.vn</a>
                         </div>
                         <div class="flex items-center" style="padding-bottom: 5px;">
                             <img src="footer_facebook.png" alt="" class="pl-2 pr-2" style="width: 45px;">
-                            <a href="https://www.facebook.com/truyenthongdaphuongtienptit"
-                                class="hover:text-white/60 transition-colors duration-200">https://www.facebook.com/truyenthongdaphuongtienptit</a>
+                            <a href="https://www.facebook.com/truyenthongdaphuongtienptit" target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200">www.facebook.com/truyenthongdaphuongtienptit</a>
                         </div>
                         <div class="flex items-center" style="padding-bottom: 5px;">
                             <img src="footer_group.png" alt="" class="pl-2 pr-2" style="width: 45px;">
-                            <a href="www.facebook.com/groups/ttdptptit"
+                            <a href="https://www.facebook.com/groups/ttdptptit" target="_blank"
                                 class="hover:text-white/60 transition-colors duration-200">www.facebook.com/groups/ttdptptit</a>
                         </div>
                         <div class="flex items-center" style="padding-bottom: 5px;">
                             <img src="footer_location.png" alt="" class="pl-2 pr-2" style="width: 45px;">
                             <a href="https://www.google.com/maps/place/Posts+and+Telecommunications+Institute+of+Technology+(PTIT)/@20.980913,105.7848416,17z/data=!3m1!4b1!4m6!3m5!1s0x3135accdd8a1ad71:0xa2f9b16036648187!8m2!3d20.980913!4d105.7874165!16s%2Fg%2F12168p16?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
-                                class="hover:text-white/60 transition-colors duration-200">Km10, Nguyễn Trãi, Mộ Lao, Hà
-                                Đông, Hà Đông, Hà Nội</a>
+                                target="_blank" class="hover:text-white/60 transition-colors duration-200">Km10, Nguyễn
+                                Trãi, Mộ Lao, Hà
+                                Đông, Hà Nội</a>
                         </div>
 
                     </div>
                 </div>
                 <div class="pr-6 flex flex-col justify-center items-center h-full min-h-[200px]">
                     <img src="logo_footer.png" alt="" style="width: 300px; ">
-                    <p class="text-white text-lg font-semibold pt-4 text-center">
-                        Learn with depth – Create with expertise </br> – Inspire with impact
+                    <p class="text-white text-lg font-semibold pt-4">
+                        Học chất - Làm sành - Truyền cảm hứng
                     </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer mobile-->
+    <footer class="bg-gradient-to-br from-[#FF851A] to-[#FFBF65] py-6 md:hidden footer-mobile">
+        <div class="container mx-auto px-2">
+            <div class="flex">
+                <div class="pr-6 flex flex-col justify-center items-center h-full min-h-[200px]">
+                    <img src="logo_footer.png" alt="" style="width: 300px; ">
+                    <p class="text-white text-lg font-semibold pt-4">
+                        Học chất - Làm sành - Truyền cảm hứng
+                    </p>
+                </div>
+                <div class="w-2/3 pl-6 flex ">
+                    <h3 class="text-white text-2xl font-extrabold drop-shadow-lg mobile"
+                        style="padding: 0px 0px 10px 0px;">
+                        TRUYỀN THÔNG ĐA PHƯƠNG TIỆN PTIT</h3>
+                    <div class="text-orange-100 text-base px-6">
+                        <div class="flex" style="padding-bottom: 5px; flex-direction: row;">
+                            <img src="footer_email.png" alt="" class="pl-2 pr-2" style="width: 45px;">
+                            <p class="text-center"> truyenthongtrongtoi@gmail.com</p>
+                        </div>
+                        <div class="flex" style="padding-bottom: 5px; flex-direction: row;">
+                            <img src="footer_web.png" alt="" class="pl-2 pr-2" style="width: 45px;">
+                            <a href="https://dpt.ptit.edu.vn/" target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200">https://dpt.ptit.edu.vn/</a>
+                        </div>
+                        <div class="flex " style="padding-bottom: 5px; flex-direction: row;">
+                            <img src="footer_facebook.png" alt="" class="pl-2 pr-2" style="width: 45px;">
+                            <a href="https://www.facebook.com/truyenthongdaphuongtienptit" target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200">www.facebook.com/truyenthongdaphuongtienptit</a>
+                        </div>
+                        <div class="flex " style="padding-bottom: 5px; flex-direction: row;">
+                            <img src="footer_group.png" alt="" class="pl-2 pr-2" style="width: 45px;">
+                            <a href="www.facebook.com/groups/ttdptptit" target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200">www.facebook.com/groups/ttdptptit</a>
+                        </div>
+                        <div class="flex" style="padding-bottom: 5px; flex-direction: row;">
+                            <img src="footer_location.png" alt="" class="pl-2 pr-2" style="width: 45px;">
+                            <a href="https://www.google.com/maps/place/Posts+and+Telecommunications+Institute+of+Technology+(PTIT)/@20.980913,105.7848416,17z/data=!3m1!4b1!4m6!3m5!1s0x3135accdd8a1ad71:0xa2f9b16036648187!8m2!3d20.980913!4d105.7874165!16s%2Fg%2F12168p16?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="hover:text-white/60 transition-colors duration-200">Km10, Nguyễn
+                                Trãi, Mộ Lao, Hà
+                                Đông, Hà Nội</a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
