@@ -1,11 +1,13 @@
 @media screen and (min-height: 750px) and (max-height: 860px) and (max-width: 450px) {
      .hero-section .container{
-          padding-top: 25% !important;
+          padding-top: 120px !important;
      }
      nav .flex-1 {
           display: none !important;
      }
-
+     .hero-section h2 {
+          margin-bottom: 5px !important;
+     }
      .block.md\:hidden {
           display: block !important;
      }
