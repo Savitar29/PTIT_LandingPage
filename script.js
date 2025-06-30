@@ -476,7 +476,7 @@ function prevTestiSlide() {
 
 function startTestiAutoSlide() {
     if (testiInterval) clearInterval(testiInterval);
-    testiInterval = setInterval(nextTestiSlide, 50000);
+    testiInterval = setInterval(nextTestiSlide, 4500);
 }
 
 function stopTestiAutoSlide() {
