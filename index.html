@@ -565,7 +565,7 @@
     </section>
 
     <!-- Courses Section Mobile -->
-    <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082] py-10 relative md:hidden block courses-desktop">
+    <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082]  relative md:hidden block courses-desktop">
         <div class="container mx-auto px-2">
             <div class="text-center mb-6">
                 <h2 class="text-white text-4xl font-extrabold mb-4 drop-shadow-lg">THỰC CHIẾN THÔNG QUA CÁC MÔN HỌC</h2>
@@ -573,21 +573,21 @@
                     những sản phẩm, dự án, cọ xát thực tế.</p>
             </div>
             <div class="flex items-center justify-center gap-2">
-                <div class="relative" style="width: 90vw; max-width: 350px; height: 180px;">
+                <div class="relative" style="width: 90vw; max-width: 400px; height: 220px;">
                     <button id="course-prev-mb"
-                        class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                        class="w-10 h-10 flex items-center justify-center  transition-all duration-200 px-2"
                         style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
                             viewBox="0 0 24 24">
                             <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <div id="course-video-mb" class="rounded-2xl overflow-hidden shadow-lg bg-white"
+                    <div id="course-video-mb" class="rounded-2xl overflow-hidden shadow-lg bg-white object-fit: contain"
                         style="width: 100%; height: 100%; position: relative; z-index: 1;">
-                        <!-- JS sẽ render video/ảnh vào đây -->
+                        <!-- video + thumbnail -->
                     </div>
                     <button id="course-next-mb"
-                        class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                        class="w-10 h-10 flex items-center justify-center  transition-all duration-200 px-2"
                         style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
                             viewBox="0 0 24 24">
@@ -599,9 +599,9 @@
         </div>
     </section>
 
-    <!--CLUB VIDEO  FF7F00 FFC082-->
-    <section class="bg-gradient-to-b from-[#FFC082] to-[#FF7F00] py-16 relative">
-        <div class="container mx-auto">
+    <!--CLUB VIDEO-->
+    <section class="bg-gradient-to-b from-[#FFC082] to-[#FF7F00] relative">
+        <div class="container mx-auto club-video-desktop">
             <div class="text-center mb-8">
                 <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg ttdpt">THỰC CHIẾN TRONG CÁC DỰ ÁN CÂU
                     LẠC BỘ
@@ -633,6 +633,40 @@
                         <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLUB VIDEO MOBILE -->
+    <section class="bg-gradient-to-b from-[#FFC082] to-[#FF7F00] py-10 relative md:hidden block">
+        <div class="container mx-auto px-2">
+            <div class="text-center mb-6">
+                <h2 class="text-white text-4xl font-extrabold mb-4 drop-shadow-lg">THỰC CHIẾN TRONG CÁC DỰ ÁN CÂU LẠC BỘ</h2>
+                <p class="text-white font-semibold italic text-base mb-4">Các câu lạc bộ dành riêng cho sinh viên Truyền thông Đa phương tiện PTIT: PTV - Kênh sinh viên Truyền thông Đa phương tiện PTIT, Câu lạc bộ Truyền thông Podcast PTIT,... giúp sinh viên có cơ hội sản xuất các sản phẩm thực tế, trau dồi kiến thức và kỹ năng chuyên môn dưới sự hướng dẫn của các giảng viên.</p>
+            </div>
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="relative" style="width: 90vw; max-width: 400px; height: 220px;">
+                    <button id="club-prev-mb"
+                        class="w-10 h-10 flex items-center justify-center transition-all duration-200 px-2"
+                        style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div id="club-video-mb" class="rounded-2xl overflow-hidden shadow-lg bg-white"
+                        style="width: 100%; height: 100%; position: relative; z-index: 1;">
+                        <!-- JS sẽ render video/ảnh vào đây -->
+                    </div>
+                    <button id="club-next-mb"
+                        class="w-10 h-10 flex items-center justify-center transition-all duration-200 px-2"
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

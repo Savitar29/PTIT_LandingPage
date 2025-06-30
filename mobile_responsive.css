@@ -460,9 +460,16 @@
      .courses-desktop {
           display: none;
      }
+
+     .text-white.font-semibold.italic.text-base.mb-4 {
+          font-size: 0.9rem !important;
+          padding: 0rem 1.5rem !important;
+     }
+
      .text-white.text-5xl.font-extrabold.mb-4.drop-shadow-lg {
           font-size: 2rem !important;
      }
+
      .text-white.text-4xl.font-extrabold.mb-4.drop-shadow-lg {
           font-size: 2rem !important;
           padding-top: 2rem !important;
@@ -546,6 +553,9 @@
      }
 
      /* Club Section */
+     .club-video-desktop {
+          display: none;
+     }
      #club-slide {
           flex-direction: column;
           gap: 1rem;
@@ -989,7 +999,14 @@
           z-index: auto !important;
           background: inherit !important;
           filter: none !important;
+     }
 
+     video:fullscreen,
+     video:-webkit-full-screen,
+     video:-moz-full-screen,
+     video:-ms-fullscreen {
+          object-fit: contain !important;
+          background: #000 !important;
      }
 
 }

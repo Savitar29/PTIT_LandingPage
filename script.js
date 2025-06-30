@@ -512,7 +512,7 @@ function renderCourseMobile(idx) {
     const videoWrap = document.getElementById('course-video-mb');
     if (videoWrap) {
         videoWrap.innerHTML = `
-            <video controls poster='${data.poster}' style="width:100%;height:100%;object-fit:cover;border-radius:18px;">
+            <video controls poster='${data.poster}' style="width:100%;height:100%;object-fit:contain;border-radius:18px;">
                 <source src='${data.video}' type='video/mp4'>
                 Trình duyệt của bạn không hỗ trợ video.
             </video>
@@ -536,3 +536,80 @@ function setupCourseMobileSlider() {
     };
 }
 document.addEventListener('DOMContentLoaded', setupCourseMobileSlider);
+
+// === CLUB VIDEO MOBILE SLIDER ===
+const clubSlides = [
+    {
+        video: 'vid_club_1.mp4',
+        poster: 'thumb_speakup.png',
+        title: 'SPEAK UP - Cuộc thi MC sinh viên',
+    },
+    {
+        video: 'vid_club_2.mp4',
+        poster: 'thumb_nhuncanhchim.png',
+        title: 'Những cánh chim truyền thông',
+    },
+    {
+        video: 'vid_club_3.mp4',
+        poster: 'thumb_1.png',
+        title: 'CLB Podcast PTIT',
+    },
+    {
+        video: 'vid_club_4.mp4',
+        poster: 'thumb_2.png',
+        title: 'CLB Sản xuất video',
+    },
+    {
+        video: 'vid_club_5.mp4',
+        poster: 'thumb_3.png',
+        title: 'CLB Truyền thông PTV'
+    }
+];
+
+function renderClubMobile(idx, direction = 1) {
+    const data = clubSlides[idx];
+    const videoWrap = document.getElementById('club-video-mb');
+    if (videoWrap) {
+        // Xóa video cũ với animation
+        const oldVideo = videoWrap.querySelector('video');
+        if (oldVideo) {
+            oldVideo.classList.remove('slide-in');
+            oldVideo.classList.add(direction === 1 ? 'slide-out-left' : 'slide-out-right');
+            setTimeout(() => {
+                if (oldVideo.parentNode) oldVideo.parentNode.removeChild(oldVideo);
+            }, 500);
+        }
+        // Thêm video mới với animation
+        const newVideo = document.createElement('video');
+        newVideo.controls = true;
+        newVideo.poster = data.poster;
+        newVideo.style.width = '100%';
+        newVideo.style.height = '100%';
+        newVideo.style.objectFit = 'contain';
+        newVideo.style.borderRadius = '18px';
+        newVideo.innerHTML = `<source src='${data.video}' type='video/mp4'>Trình duyệt của bạn không hỗ trợ video.`;
+        newVideo.classList.add('slide-in');
+        videoWrap.appendChild(newVideo);
+        setTimeout(() => {
+            newVideo.classList.add('slide-in');
+        }, 10);
+    }
+}
+
+function setupClubMobileSlider() {
+    let idx = 0;
+    renderClubMobile(idx, 1);
+    const prevBtn = document.getElementById('club-prev-mb');
+    const nextBtn = document.getElementById('club-next-mb');
+    if (prevBtn) prevBtn.onclick = function() {
+        const prev = (idx - 1 + clubSlides.length) % clubSlides.length;
+        renderClubMobile(prev, -1);
+        idx = prev;
+    };
+    if (nextBtn) nextBtn.onclick = function() {
+        const next = (idx + 1) % clubSlides.length;
+        renderClubMobile(next, 1);
+        idx = next;
+    };
+}
+document.addEventListener('DOMContentLoaded', setupClubMobileSlider);
