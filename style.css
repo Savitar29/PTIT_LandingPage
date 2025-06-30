@@ -2,9 +2,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.gradient-bg {
-    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 25%, #ffa726 50%, #ffb74d 75%, #ffcc80 100%);
-}
+
 
 .card-hover {
     transition: all 0.3s ease;

@@ -100,7 +100,7 @@ function toggleDropdown() {
 
     // Toggle trạng thái hiển thị
     const isVisible = !dropdown.classList.contains('opacity-0');
-    
+
     if (isVisible) {
         // Đóng dropdown
         dropdown.classList.add('opacity-0', 'invisible');
@@ -397,18 +397,110 @@ window.addEventListener('DOMContentLoaded', () => {
     renderClubSlide(clubCurrent);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var menuBtn = document.getElementById('mobile-menu-btn');
     var mobileMenu = document.getElementById('mobile-menu');
     var navLinks = document.querySelectorAll('#mobile-menu .mobile-nav-link');
-    if(menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function() {
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
             mobileMenu.classList.toggle('show');
         });
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
                 mobileMenu.classList.remove('show');
             });
         });
     }
 });
+
+// === TESTIMONIAL SLIDER MOBILE ===
+function isMobileTestiSlider() {
+    return window.innerWidth >= 350 && window.innerWidth <= 450;
+}
+
+let testiCards = [];
+let testiIndex = 0;
+let testiInterval = null;
+
+function showTestiSlide(idx, direction = 1) {
+    const slideContent = document.getElementById('testi-slide-content');
+    if (!slideContent) return;
+    // Xóa slide cũ với animation
+    const oldSlide = slideContent.querySelector('.testi-card');
+    if (oldSlide) {
+        oldSlide.classList.remove('slide-in');
+        if (direction === 1) {
+            oldSlide.classList.add('slide-out-left');
+        } else {
+            oldSlide.classList.add('slide-out-right');
+        }
+        setTimeout(() => {
+            if (oldSlide.parentNode) oldSlide.parentNode.removeChild(oldSlide);
+        }, 700); // Thời gian khớp với CSS
+    }
+    // Thêm slide mới với animation
+    if (testiCards[idx]) {
+        const newSlide = testiCards[idx].cloneNode(true);
+        // Đặt trạng thái ban đầu cho slide mới
+        if (direction === 1) {
+            newSlide.style.transform = 'translateX(100%)';
+        } else {
+            newSlide.style.transform = 'translateX(-100%)';
+        }
+        newSlide.style.opacity = '0';
+        newSlide.classList.add('testi-card');
+        slideContent.appendChild(newSlide);
+        // Kích hoạt animation sau 1 tick
+        setTimeout(() => {
+            newSlide.classList.add('slide-in');
+            newSlide.style.transform = '';
+            newSlide.style.opacity = '';
+        }, 10);
+    }
+}
+
+function nextTestiSlide() {
+    const prevIndex = testiIndex;
+    testiIndex = (testiIndex + 1) % testiCards.length;
+    showTestiSlide(testiIndex, 1);
+}
+
+function prevTestiSlide() {
+    const prevIndex = testiIndex;
+    testiIndex = (testiIndex - 1 + testiCards.length) % testiCards.length;
+    showTestiSlide(testiIndex, -1);
+}
+
+function startTestiAutoSlide() {
+    if (testiInterval) clearInterval(testiInterval);
+    testiInterval = setInterval(nextTestiSlide, 50000);
+}
+
+function stopTestiAutoSlide() {
+    if (testiInterval) clearInterval(testiInterval);
+}
+
+function setupTestiSliderMobile() {
+    const grid = document.querySelector('.testi-grid');
+    const slider = document.querySelector('.testi-slider-mobile');
+    testiCards = Array.from(document.querySelectorAll('.testi-grid .testi-card'));
+    if (isMobileTestiSlider()) {
+        if (grid) grid.style.display = 'none';
+        if (slider) slider.style.display = 'flex';
+        showTestiSlide(testiIndex);
+        startTestiAutoSlide();
+    } else {
+        if (grid) grid.style.display = '';
+        if (slider) slider.style.display = 'none';
+        stopTestiAutoSlide();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    setupTestiSliderMobile();
+    const prevBtn = document.getElementById('testi-prev');
+    const nextBtn = document.getElementById('testi-next');
+    if (prevBtn) prevBtn.onclick = function () { prevTestiSlide(); startTestiAutoSlide(); };
+    if (nextBtn) nextBtn.onclick = function () { nextTestiSlide(); startTestiAutoSlide(); };
+});
+window.addEventListener('resize', setupTestiSliderMobile);

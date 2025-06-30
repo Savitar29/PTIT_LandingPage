@@ -54,7 +54,7 @@
      }
 
      .hero-section {
-          margin-top: 20px !important;
+          margin-top: 0px !important;
      }
 
      .content-hero {
@@ -548,8 +548,13 @@
      }
 
      /* Truyền cảm hứng section */
+
+     #truyencamhung {
+          padding: 0px 0px 0px 0px;
+     }
+
      #truyencamhung .container {
-          padding: 0 1rem;
+          padding: 2rem 1.5rem;
      }
 
      #truyencamhung span.ml-12 {
@@ -558,8 +563,80 @@
 
      #truyencamhung h2 {
           font-size: 2rem !important;
+          line-height: 1.2;
+          margin: 0 !important;
+          padding: 0px 5px;
      }
 
+     #truyencamhung .testi-grid {
+          display: none !important;
+     }
+
+     #truyencamhung .testi-slider-mobile {
+          display: flex !important;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          width: 100%;
+          margin: 0 auto 20px auto;
+     }
+
+     #truyencamhung #testi-slide-content {
+          position: relative;
+          overflow: hidden;
+          min-height: 550px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: stretch;
+     }
+
+     #truyencamhung .testi-card {
+          position: absolute;
+          left: 0; right: 0; top: 0; bottom: 0;
+          width: 100%;
+          opacity: 0;
+          transform: translateX(100%);
+          transition: all 0.7s cubic-bezier(.4,0,.2,1);
+          z-index: 1;
+          border: 2px solid #FFB97A;
+     }
+
+     .testi-img-wrap {
+          width: 100% !important;
+          height: 400px !important;
+          object-fit: cover;
+          border-radius: 18px;
+     }
+
+     #truyencamhung .testi-card.slide-in {
+          opacity: 1;
+          transform: translateX(0);
+          z-index: 2;
+
+     }
+
+     #truyencamhung .testi-card.slide-out-left {
+          opacity: 0.1;
+          transform: translateX(-100%);
+          z-index: 1;
+     }
+
+     #truyencamhung .testi-card.slide-out-right {
+          opacity: 0.1;
+          transform: translateX(100%);
+          z-index: 1;
+     }
+
+     #testi-slide-content {
+          display: flex;
+          flex-direction: column-reverse;
+     }
+     .text-center.mb-20 {
+          margin-bottom: 1rem !important;
+     }
      .testi-grid {
           grid-template-columns: 1fr !important;
           gap: 1.5rem;
@@ -590,28 +667,38 @@
      }
 
      /* News section */
+     .deadline {
+          padding: 0px 0px !important;
+     }
+     .career-p {
+          padding: 0.5rem 1rem !important;
+          font-size: 0.9rem !important;
+          margin-bottom: 0rem !important;
+     }
+     .text-center.mb-12 {
+          margin-bottom: 0.2rem !important;
+     }
+     .text-new {
+          padding: 0 !important
+     }
      #truyencamhung .grid.grid-cols-1.md\:grid-cols-2 {
           grid-template-columns: 1fr;
           gap: 1rem;
-          padding: 0 1rem;
-     }
-
-     #truyencamhung h2 {
-          font-size: 2rem !important;
-          padding: 0 1rem;
      }
 
      #truyencamhung p {
-          font-size: 1rem !important;
-          padding: 0 1rem !important;
+          font-size: 0.9rem !important;
      }
-
+     .deadline-p {
+          padding: 0.5rem 1rem !important;
+     }
      .new-card {
           margin: 0 0 1rem 0 !important;
      }
 
      .content-new a {
           font-size: 1rem !important;
+          text-decoration: underline;
      }
 
      .content-new p {
@@ -619,6 +706,15 @@
      }
 
      /* Career section */
+     .career-img-mobile {
+          display: block !important;
+     }
+     .career-img-desktop {
+          display: none !important;
+     }
+     .career-section {
+          padding: 3rem 0rem !important;
+     }
      .bg-gradient-to-br.from-\[#FF8800\].to-\[#FFCA8D\] {
           padding: 2rem 1rem;
      }
@@ -642,8 +738,14 @@
      }
 
      /* Footer */
-     footer .container {
-          padding: 0 1rem;
+     .footer-desktop {
+          display: none;
+     }
+     .footer-mobile {
+          display: block !important;
+     }
+     footer {
+          padding: 0rem !important;
      }
 
      footer .flex {
@@ -668,20 +770,31 @@
      footer .flex.items-center {
           justify-content: center;
           gap: 0.5rem;
+          padding: 1rem 0rem;
      }
-
+     .pr-6.flex.flex-col.justify-center.items-center.h-full {
+          min-height: 120px;
+          padding-top: 1.5rem !important;
+     }
+     .text-white.text-lg.font-semibold.pt-4 {
+          padding-top: 0px !important;
+     }
      footer img {
-          width: 30px !important;
+          width: 40px !important;
      }
-
      footer .pr-6 {
           padding-right: 0;
      }
-
+     footer a {
+          font-size: 0.8rem !important;
+     }
      footer .pr-6 img {
           width: 200px !important;
      }
-
+     .text-white.text-2xl.font-extrabold.drop-shadow-lg.mobile {
+          margin: 0 !important;
+          padding: 0 !important;
+     }
      /* Navigation buttons */
      #course-prev,
      #course-next,
@@ -762,8 +875,8 @@
 
      /* Line image */
      img[src="line.png"] {
-          padding-top: 2rem !important;
-          width: 100%;
+          padding: 0rem !important;
+          width: 90%;
           height: auto;
      }
 
@@ -834,6 +947,17 @@
      .genz-quote-mobile {
           display: block !important;
      }
+
+     .new-card:hover, .new-card:active, .new-card:focus {
+          box-shadow: none !important;
+          border-color: #FFB97A !important;
+          transform: none !important;
+          z-index: auto !important;
+          background: inherit !important;
+          filter: none !important;
+          
+     }
+
 }
 
 @media screen and (max-width: 379px),
@@ -895,6 +1019,13 @@ screen and (min-width: 451px) {
           display: flex !important;
      }
 
-
+     .new-card:hover, .new-card:active, .new-card:focus {
+          box-shadow: none !important;
+          border-color: #FFB97A !important;
+          transform: none !important;
+          z-index: auto !important;
+          background: inherit !important;
+          filter: none !important;
+     }
 
 }
