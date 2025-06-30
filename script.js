@@ -76,7 +76,7 @@ function getCurrentLanguage() {
     // Kiểm tra từ URL trước
     if (currentPath.includes('doipho_en') || currentPath.includes('/en/')) {
         return 'en';
-    } else if (currentPath.includes('beiu.html') || htmlLang === 'vi') {
+    } else if (currentPath.includes('index.html') || htmlLang === 'vi') {
         return 'vi';
     }
 
@@ -126,9 +126,9 @@ function switchLanguage(targetLang) {
 
     let targetUrl;
     if (targetLang === 'en') {
-        targetUrl = 'doipho_en.html';
+        targetUrl = 'index-eng.html';
     } else {
-        targetUrl = 'beiu.html';
+        targetUrl = 'index.html';
     }
 
     setTimeout(() => {

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Testimonial Slider</title>
+     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+     <style>
+          .testi-card {
+               transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+          }
+
+          .testi-card.hidden {
+               transform: translateX(100%);
+               opacity: 0;
+               position: absolute;
+          }
+
+          .testi-card.active {
+               transform: translateX(0);
+               opacity: 1;
+          }
+
+          .testi-card.prev {
+               transform: translateX(-100%);
+               opacity: 0;
+          }
+
+          .testi-slider-mobile {
+               overflow: hidden;
+               position: relative;
+          }
+
+          .testi-img-wrap img {
+               width: 100%;
+               height: auto;
+               border-radius: 8px;
+          }
+
+          .testi-name {
+               font-size: 1.25rem;
+               font-weight: bold;
+               padding: 0.5rem;
+               text-align: center;
+          }
+
+          .testi-role {
+               font-size: 1rem;
+               font-style: italic;
+               margin: 0.5rem 0;
+          }
+
+          .testi-quote {
+               font-size: 0.9rem;
+               padding: 0.5rem;
+          }
+
+          #testi-prev,
+          #testi-next {
+               display: flex !important;
+               visibility: visible !important;
+               z-index: 2000;
+          }
+     </style>
+</head>
+
+<body class="bg-gray-900">
+     <section class="gradient-bg pb-24 pt-16 bg-gradient-to-b from-[#FFBD71] to-[#FF8000]" style="position: relative;"
+          id="truyencamhung">
+          <div class="container mx-auto px-6">
+               <div class="text-center mb-20">
+                    <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">GẶP GỠ NHỮNG "CHIẾN
+                         BINH" NỔI BẬT CỦA NGÀNH</h2>
+               </div>
+               <div class="testi-grid pl-8 pr-8 hidden md:grid md:grid-cols-3 gap-8">
+                    <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
+                         <div class="testi-img-wrap">
+                              <img src="beiu1.png" alt="Đinh Thị Diễm Quỳnh">
+                              <div class="testi-name text-white border">Đinh Thị Diễm Quỳnh - Khóa D21</div>
+                         </div>
+                         <div class="testi-role text-white">Team MCN tại META ECOM</div>
+                         <p class="testi-quote text-white">
+                              "Trải qua 4 năm học, mình vừa được học tư duy, vừa được thực chiến qua nhiều cơ hội hợp
+                              tác với doanh nghiệp và các hoạt động khác dành cho sinh viên"
+                         </p>
+                    </div>
+                    <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
+                         <div class="testi-img-wrap">
+                              <img src="khanhduy.png" alt="Nhữ Khánh Duy">
+                              <div class="testi-name text-white border">Nhữ Khánh Duy – Khóa D20</div>
+                         </div>
+                         <div class="testi-role text-white">Corporate Communications Intern tại Bosch Global Software
+                              Technologies Việt Nam</div>
+                         <p class="testi-quote text-white">
+                              "PTIT không chỉ dạy lý thuyết mà còn rèn mình cách suy nghĩ và hành động như một người làm
+                              truyền thông thực thụ"
+                         </p>
+                    </div>
+                    <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
+                         <div class="testi-img-wrap">
+                              <img src="hongngoc.png" alt="Nguyễn Hồng Ngọc">
+                              <div class="testi-name text-white border">Nguyễn Hồng Ngọc - Khóa D20</div>
+                         </div>
+                         <div class="testi-role text-white">PR & Internal Communication Executive tại Relipa Co., Ltd.
+                         </div>
+                         <p class="testi-quote text-white">
+                              "Trải qua 4 năm học, mình vừa được học tư duy, vừa được thực chiến qua nhiều cơ hội hợp
+                              tác với doanh nghiệp và các hoạt động khác dành cho sinh viên"
+                         </p>
+                    </div>
+               </div>
+               <div class="testi-slider-mobile btn-mobile md:hidden" style="position: relative;">
+                    <div id="testi-slide-content" class="border-radius border-white" style="position: relative;">
+                         <button id="testi-prev"
+                              class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                              style="position: absolute; left: 8%; top: 50%; transform: translateY(-50%); z-index: 2000;">
+                              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                                   viewBox="0 0 24 24">
+                                   <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                         </button>
+                         <button id="testi-next"
+                              class="w-10 h-10 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg px-2"
+                              style="position: absolute; right: 8%; top: 50%; transform: translateY(-50%); z-index: 2000;">
+                              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                                   viewBox="0 0 24 24">
+                                   <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                         </button>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <script>
+          const testimonials = [
+               {
+                    img: "beiu1.png",
+                    alt: "Đinh Thị Diễm Quỳnh",
+                    name: "Đinh Thị Diễm Quỳnh - Khóa D21",
+                    role: "Team MCN tại META ECOM",
+                    quote: "Trải qua 4 năm học, mình vừa được học tư duy, vừa được thực chiến qua nhiều cơ hội hợp tác với doanh nghiệp và các hoạt động khác dành cho sinh viên"
+               },
+               {
+                    img: "khanhduy.png",
+                    alt: "Nhữ Khánh Duy",
+                    name: "Nhữ Khánh Duy – Khóa D20",
+                    role: "Corporate Communications Intern tại Bosch Global Software Technologies Việt Nam",
+                    quote: "PTIT không chỉ dạy lý thuyết mà còn rèn mình cách suy nghĩ và hành động như một người làm truyền thông thực thụ"
+               },
+               {
+                    img: "hongngoc.png",
+                    alt: "Nguyễn Hồng Ngọc",
+                    name: "Nguyễn Hồng Ngọc - Khóa D20",
+                    role: "PR & Internal Communication Executive tại Relipa Co., Ltd.",
+                    quote: "Trải qua 4 năm học, mình vừa được học tư duy, vừa được thực chiến qua nhiều cơ hội hợp tác với doanh nghiệp và các hoạt động khác dành cho sinh viên"
+               },
+               {
+                    img: "tiendat.png",
+                    alt: "Lê Tiến Đạt",
+                    name: "Lê Tiến Đạt - Khoá D20",
+                    role: "Artist Manager tại C-Global Entertainment",
+                    quote: "Hành trình vạn dặm thì cũng bắt đầu từ một bước chân. Khi mới bắt đầu, mình cũng từng là một cậu sinh viên truyền thông PTIT"
+               },
+               {
+                    img: "thiyen.png",
+                    alt: "Nguyễn Thị Yến",
+                    name: "Nguyễn Thị Yến - Khoá D17",
+                    role: "Travel Content Creator",
+                    quote: "Cái duyên đưa mình đến với ngành Truyền thông đa phương tiện ở PTIT và chính nhờ những môn học thú vị của ngành này đã dẫn lối mình trở thành một Travel Content Creator từ lúc nào không hay. Mình đang được làm công việc mà mình yêu thích và sống với đam mê. Cảm ơn thầy cô và PTIT rất nhiều"
+               },
+               {
+                    img: "tuanminh.png",
+                    alt: "Nguyễn Quốc Tuấn Minh",
+                    name: "Nguyễn Quốc Tuấn Minh - Khoá D17",
+                    role: "Content Creator tại MinhMinhMinh",
+                    quote: "Không chỉ là kiến thức mà môi trường ngành TTĐPT PTIT đã dạy cho mình cách chủ động tìm kiếm cơ hội, thêm vào đó còn cho mình những mối quan hệ tới giờ vẫn có thể hỗ trợ nhau trong công việc"
+               }
+          ];
+
+          document.addEventListener('DOMContentLoaded', () => {
+               const slideContent = document.getElementById('testi-slide-content');
+               let currentIndex = 0;
+
+               function renderTestimonial(index, direction = 'next') {
+                    const testimonial = testimonials[index];
+                    const card = document.createElement('div');
+                    card.className = `testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover ${direction === 'next' ? 'active' : 'prev'}`;
+                    card.innerHTML = `
+                    <div class="testi-img-wrap">
+                         <img src="${testimonial.img}" alt="${testimonial.alt}">
+                         <div class="testi-name text-white border">${testimonial.name}</div>
+                    </div>
+                    <div class="testi-role text-white">${testimonial.role}</div>
+                    <p class="testi-quote text-white">${testimonial.quote}</p>
+               `;
+                    slideContent.appendChild(card);
+
+                    setTimeout(() => {
+                         card.classList.add('active');
+                         if (direction === 'next') {
+                              card.classList.remove('hidden');
+                         } else {
+                              card.classList.remove('prev');
+                         }
+                    }, 10);
+
+                    setTimeout(() => {
+                         const oldCards = slideContent.getElementsByClassName('testi-card');
+                         while (oldCards.length > 1) {
+                              oldCards[0].remove();
+                         }
+                    }, 500);
+               }
+
+               function showNext() {
+                    currentIndex = (currentIndex + 1) % testimonials.length;
+                    renderTestimonial(currentIndex, 'next');
+               }
+
+               function showPrev() {
+                    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                    renderTestimonial(currentIndex, 'prev');
+               }
+
+               document.getElementById('testi-prev').addEventListener('click', showPrev);
+               document.getElementById('testi-next').addEventListener('click', showNext);
+
+               renderTestimonial(currentIndex);
+          });
+     </script>
+</body>
+
+</html>
