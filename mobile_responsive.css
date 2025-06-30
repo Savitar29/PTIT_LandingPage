@@ -92,7 +92,7 @@
      /* Header & Navigation */
      header {
           padding: 0.5rem 0;
-          height: 92px !important;
+          height: 85px !important;
           display: flex;
           align-items: center;
      }
@@ -230,7 +230,7 @@
 
      /* Profile image */
      #profile {
-          max-width: 300px !important;
+          max-width: 280px !important;
           margin-top: 0.5rem !important;
           margin: 0 !important;
      }
