@@ -74,9 +74,9 @@ function getCurrentLanguage() {
     const htmlLang = document.documentElement.lang;
 
     // Kiểm tra từ URL trước
-    if (currentPath.includes('index-en.html') || currentPath.includes('/en/')) {
+    if (currentPath.includes('doipho_en') || currentPath.includes('/en/')) {
         return 'en';
-    } else if (currentPath.includes('index.html') || htmlLang === 'vi') {
+    } else if (currentPath.includes('beiu.html') || htmlLang === 'vi') {
         return 'vi';
     }
 
@@ -116,21 +116,24 @@ function toggleDropdown() {
 
 // Hàm chuyển đổi ngôn ngữ chính
 function switchLanguage(targetLang) {
-    const currentLang = getCurrentLanguage();
+    // Hiện loading
+    const loading = document.getElementById('page-loading');
+    if (loading) loading.style.display = 'flex';
 
-    // Nếu đã ở ngôn ngữ được chọn thì không làm gì
-    if (currentLang === targetLang) return;
+    // Lưu vị trí cuộn
+    localStorage.setItem('scrollY', window.scrollY);
+    localStorage.setItem('lang', targetLang);
 
-    // Xác định URL đích
     let targetUrl;
     if (targetLang === 'en') {
-        targetUrl = 'index-en.html';
+        targetUrl = 'doipho_en.html';
     } else {
-        targetUrl = 'index.html';
+        targetUrl = 'beiu.html';
     }
 
-    // Chuyển hướng
-    window.location.href = targetUrl;
+    setTimeout(() => {
+        window.location.href = targetUrl;
+    }, 300);
 }
 
 // Wrapper functions cho các nút trong dropdown
@@ -613,3 +616,11 @@ function setupClubMobileSlider() {
     };
 }
 document.addEventListener('DOMContentLoaded', setupClubMobileSlider);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const y = localStorage.getItem('scrollY');
+    if (y) {
+        window.scrollTo(0, parseInt(y));
+        localStorage.removeItem('scrollY');
+    }
+});
