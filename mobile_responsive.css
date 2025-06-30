@@ -1,13 +1,16 @@
-@media screen and (min-height: 750px) and (max-height: 860px) and (max-width: 450px) {
-     .hero-section .container{
+@media screen and (min-height: 700px) and (max-height: 860px) and (max-width: 450px) {
+     .hero-section .container {
           padding-top: 120px !important;
      }
+
      nav .flex-1 {
           display: none !important;
      }
+
      .hero-section h2 {
           margin-bottom: 5px !important;
      }
+
      .block.md\:hidden {
           display: block !important;
      }
@@ -457,6 +460,13 @@
      .courses-desktop {
           display: none;
      }
+     .text-white.text-5xl.font-extrabold.mb-4.drop-shadow-lg {
+          font-size: 2rem !important;
+     }
+     .text-white.text-4xl.font-extrabold.mb-4.drop-shadow-lg {
+          font-size: 2rem !important;
+          padding-top: 2rem !important;
+     }
 
      .w-full.border-t.border-b {
           padding: 0;
@@ -516,9 +526,7 @@
           font-size: 1.5rem !important;
      }
 
-     #course-slide .text-4xl {
-          font-size: 1.5rem !important;
-     }
+     #course-slide .text-4xl {}
 
      #course-slide .text-xl {
           font-size: 1rem !important;
@@ -596,11 +604,14 @@
 
      #truyencamhung .testi-card {
           position: absolute;
-          left: 0; right: 0; top: 0; bottom: 0;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
           width: 100%;
           opacity: 0;
           transform: translateX(100%);
-          transition: all 0.7s cubic-bezier(.4,0,.2,1);
+          transition: all 0.7s cubic-bezier(.4, 0, .2, 1);
           z-index: 1;
           border: 2px solid #FFB97A;
      }
@@ -635,9 +646,11 @@
           display: flex;
           flex-direction: column-reverse;
      }
+
      .text-center.mb-20 {
           margin-bottom: 1rem !important;
      }
+
      .testi-grid {
           grid-template-columns: 1fr !important;
           gap: 1.5rem;
@@ -671,17 +684,21 @@
      .deadline {
           padding: 0px 0px !important;
      }
+
      .career-p {
           padding: 0.5rem 1rem !important;
           font-size: 0.9rem !important;
           margin-bottom: 0rem !important;
      }
+
      .text-center.mb-12 {
           margin-bottom: 0.2rem !important;
      }
+
      .text-new {
           padding: 0 !important
      }
+
      #truyencamhung .grid.grid-cols-1.md\:grid-cols-2 {
           grid-template-columns: 1fr;
           gap: 1rem;
@@ -690,9 +707,11 @@
      #truyencamhung p {
           font-size: 0.9rem !important;
      }
+
      .deadline-p {
           padding: 0.5rem 1rem !important;
      }
+
      .new-card {
           margin: 0 0 1rem 0 !important;
      }
@@ -710,12 +729,15 @@
      .career-img-mobile {
           display: block !important;
      }
+
      .career-img-desktop {
           display: none !important;
      }
+
      .career-section {
           padding: 3rem 0rem !important;
      }
+
      .bg-gradient-to-br.from-\[#FF8800\].to-\[#FFCA8D\] {
           padding: 2rem 1rem;
      }
@@ -742,10 +764,12 @@
      .footer-desktop {
           display: none;
      }
+
      .footer-mobile {
           display: block !important;
           padding-bottom: 1.5rem !important;
      }
+
      footer {
           padding: 0rem !important;
      }
@@ -774,29 +798,37 @@
           gap: 0.5rem;
           padding: 1rem 0rem;
      }
+
      .pr-6.flex.flex-col.justify-center.items-center.h-full {
           min-height: 120px;
           padding-top: 1.5rem !important;
      }
+
      .text-white.text-lg.font-semibold.pt-4 {
           padding-top: 0px !important;
      }
+
      footer img {
           width: 40px !important;
      }
+
      footer .pr-6 {
           padding-right: 0;
      }
+
      footer a {
           font-size: 0.8rem !important;
      }
+
      footer .pr-6 img {
           width: 200px !important;
      }
+
      .text-white.text-2xl.font-extrabold.drop-shadow-lg.mobile {
           margin: 0 !important;
           padding: 0 !important;
      }
+
      /* Navigation buttons */
      #course-prev,
      #course-next,
@@ -816,23 +848,21 @@
 
      /* General text adjustments */
      .text-5xl {
-          font-size: 2rem !important;
+          font-size: 1.8rem !important;
+          line-height: 1.2;
      }
 
-     .text-4xl {
-          font-size: 1.5rem !important;
-     }
 
      .text-3xl {
           font-size: 1.25rem !important;
      }
 
      .text-2xl {
-          font-size: 1.125rem !important;
+          font-size: 1.1rem !important;
      }
 
      .text-xl {
-          font-size: 1rem !important;
+          font-size: 0.9rem !important;
      }
 
      /* Container adjustments */
@@ -950,14 +980,16 @@
           display: block !important;
      }
 
-     .new-card:hover, .new-card:active, .new-card:focus {
+     .new-card:hover,
+     .new-card:active,
+     .new-card:focus {
           box-shadow: none !important;
           border-color: #FFB97A !important;
           transform: none !important;
           z-index: auto !important;
           background: inherit !important;
           filter: none !important;
-          
+
      }
 
 }
@@ -1021,7 +1053,9 @@ screen and (min-width: 451px) {
           display: flex !important;
      }
 
-     .new-card:hover, .new-card:active, .new-card:focus {
+     .new-card:hover,
+     .new-card:active,
+     .new-card:focus {
           box-shadow: none !important;
           border-color: #FFB97A !important;
           transform: none !important;

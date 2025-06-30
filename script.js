@@ -504,3 +504,35 @@ document.addEventListener('DOMContentLoaded', function () {
     if (nextBtn) nextBtn.onclick = function () { nextTestiSlide(); startTestiAutoSlide(); };
 });
 window.addEventListener('resize', setupTestiSliderMobile);
+
+// === COURSES SECTION MOBILE RENDER ===
+function renderCourseMobile(idx) {
+    const data = courseSlides[idx];
+    // Render video/ảnh
+    const videoWrap = document.getElementById('course-video-mb');
+    if (videoWrap) {
+        videoWrap.innerHTML = `
+            <video controls poster='${data.poster}' style="width:100%;height:100%;object-fit:cover;border-radius:18px;">
+                <source src='${data.video}' type='video/mp4'>
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        `;
+    }
+}
+
+// Thêm sự kiện cho mobile slider
+function setupCourseMobileSlider() {
+    let idx = 0;
+    renderCourseMobile(idx);
+    const prevBtn = document.getElementById('course-prev-mb');
+    const nextBtn = document.getElementById('course-next-mb');
+    if (prevBtn) prevBtn.onclick = function() {
+        idx = (idx - 1 + courseSlides.length) % courseSlides.length;
+        renderCourseMobile(idx);
+    };
+    if (nextBtn) nextBtn.onclick = function() {
+        idx = (idx + 1) % courseSlides.length;
+        renderCourseMobile(idx);
+    };
+}
+document.addEventListener('DOMContentLoaded', setupCourseMobileSlider);
