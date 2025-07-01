@@ -5,11 +5,11 @@ body {
 
 
 .card-hover {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
 }
 
 .card-hover:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) !important;
     box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
 }
 

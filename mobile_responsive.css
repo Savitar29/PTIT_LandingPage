@@ -569,7 +569,12 @@
      }
 
      /* Truyền cảm hứng section */
-
+     .chienbinh-mobile {
+          display:  block !important;
+     }
+     .chienbinh-desktop {
+          display: none !important;
+     }
      #truyencamhung {
           padding: 0px 0px 0px 0px;
      }

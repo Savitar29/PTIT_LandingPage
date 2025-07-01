@@ -68,12 +68,12 @@ const courseSlidesEN = [
     }
 ];
 
-// Xác định ngôn ngữ hiện tại dựa trên URL hoặc thuộc tính lang
+// LANGUAGE SWITCHING
+
 function getCurrentLanguage() {
     const currentPath = window.location.pathname;
     const htmlLang = document.documentElement.lang;
 
-    // Kiểm tra từ URL trước
     if (currentPath.includes('index-en.html') || currentPath.includes('/en/')) {
         return 'en';
     } else if (currentPath.includes('index.html') || htmlLang === 'vi') {
@@ -84,10 +84,6 @@ function getCurrentLanguage() {
 
 const currentLang = getCurrentLanguage();
 const courseSlides = currentLang === 'en' ? courseSlidesEN : courseSlidesVI;
-
-// ======================================
-// LANGUAGE SWITCHING LOGIC
-// ======================================
 
 function toggleDropdown() {
     const dropdown = document.getElementById('lang-dropdown');
@@ -130,7 +126,6 @@ function switchLanguage(targetLang) {
     }, 300);
 }
 
-// Wrapper functions cho các nút trong dropdown
 function setLang(lang) {
     if (lang === 'ENG') {
         switchLanguage('en');
@@ -139,7 +134,6 @@ function setLang(lang) {
     }
 }
 
-// Deprecated - giữ lại để tương thích
 function setLangWithStorage(lang) {
     setLang(lang);
 }
@@ -182,9 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ======================================
+
 // COURSE SLIDER LOGIC
-// ======================================
 
 let currentCourse = 0;
 let isSliding = false;
@@ -268,12 +261,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ======================================
 // HEADER SCROLL LOGIC
-// ======================================
-
 let lastScrollTop = 0;
-
 window.addEventListener("scroll", function () {
     const header = document.querySelector('header');
     if (!header) return;
@@ -289,10 +278,8 @@ window.addEventListener("scroll", function () {
     lastScrollTop = st <= 0 ? 0 : st;
 }, false);
 
-// ======================================
-// CLUB SLIDER LOGIC
-// ======================================
 
+// CLUB SLIDER LOGIC
 const clubVideos = [
     { src: 'vid_club_1.mp4', poster: 'thumb_1.png' },
     { src: 'vid_club_2.mp4', poster: 'thumb_2.png' },
@@ -385,9 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ======================================
-// INITIALIZATION
-// ======================================
 
 window.addEventListener('DOMContentLoaded', () => {
     renderCourseSlide(currentCourse, 0);
@@ -433,7 +417,7 @@ function showTestiSlide(idx, direction = 1) {
         }
         setTimeout(() => {
             if (oldSlide.parentNode) oldSlide.parentNode.removeChild(oldSlide);
-        }, 700); // Thời gian khớp với CSS
+        }, 700);
     }
     // Thêm slide mới với animation
     if (testiCards[idx]) {
@@ -523,11 +507,11 @@ function setupCourseMobileSlider() {
     renderCourseMobile(idx);
     const prevBtn = document.getElementById('course-prev-mb');
     const nextBtn = document.getElementById('course-next-mb');
-    if (prevBtn) prevBtn.onclick = function() {
+    if (prevBtn) prevBtn.onclick = function () {
         idx = (idx - 1 + courseSlides.length) % courseSlides.length;
         renderCourseMobile(idx);
     };
-    if (nextBtn) nextBtn.onclick = function() {
+    if (nextBtn) nextBtn.onclick = function () {
         idx = (idx + 1) % courseSlides.length;
         renderCourseMobile(idx);
     };
@@ -593,17 +577,139 @@ function renderClubMobile(idx, direction = 1) {
     }
 }
 
+//JS cho phần Truyền cảm hứng slide
+(function() {
+    const testiCards = Array.from(document.querySelectorAll('#testi-slide .testi-card'));
+    const btnPrev = document.getElementById('testi-prev-slide');
+    const btnNext = document.getElementById('testi-next-slide');
+    let testiStart = 0;
+    const testiShow = 3;
+    let autoSlideTimer = null;
+    let pauseTimer = null;
+
+    function slideOutIn(callback, direction = 'next') {
+        const visibleCards = testiCards.slice(testiStart, testiStart + testiShow);
+
+        testiCards.forEach(card => {
+            card.style.transition = 'none';
+            card.style.transform = 'translateX(0)';
+            card.style.opacity = '1';
+            if (!visibleCards.includes(card)) {
+                card.style.display = 'none';
+            }
+        });
+
+        visibleCards.forEach((card, index) => {
+            card.style.transition = 'opacity 0.3s ease-in-out';
+            card.style.opacity = '0.2';
+        });
+
+        setTimeout(() => {
+            visibleCards.forEach(card => {
+                card.style.display = 'none';
+                card.style.transition = 'none';
+                card.style.opacity = '1';
+            });
+            callback();
+
+            const newVisibleCards = testiCards.slice(testiStart, testiStart + testiShow);
+            newVisibleCards.forEach((card, index) => {
+                card.style.display = 'block';
+                card.style.left = `${index * 100 / testiShow}%`;
+                card.style.transition = 'none';
+                card.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+                card.style.opacity = '0.2';
+                setTimeout(() => {
+                    card.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
+                    card.style.transform = 'translateX(0)';
+                    card.style.opacity = '1';
+                }, 20);
+            });
+        }, 500);
+    }
+
+    function renderTestiSlide(animate = false) {
+        testiCards.forEach((card, idx) => {
+            card.style.transition = 'none';
+            if (idx >= testiStart && idx < testiStart + testiShow) {
+                card.style.display = 'block';
+                card.style.left = `${(idx - testiStart) * 100 / testiShow}%`;
+                if (!animate) {
+                    card.style.transform = 'translateX(0)';
+                }
+            } else {
+                card.style.display = 'none';
+                card.style.transform = 'translateX(0)';
+            }
+        });
+        if (btnPrev) btnPrev.disabled = testiStart === 0;
+        if (btnNext) btnNext.disabled = testiStart >= testiCards.length - testiShow;
+    }
+
+    function nextSlide() {
+        if (testiStart < testiCards.length - testiShow) {
+            slideOutIn(() => {
+                testiStart++;
+                renderTestiSlide(true);
+            }, 'next');
+        } else {
+            slideOutIn(() => {
+                testiStart = 0;
+                renderTestiSlide(true);
+            }, 'next');
+        }
+    }
+
+    function prevSlide() {
+        if (testiStart > 0) {
+            slideOutIn(() => {
+                testiStart--;
+                renderTestiSlide(true);
+            }, 'prev');
+        } else {
+            slideOutIn(() => {
+                testiStart = testiCards.length - testiShow;
+                renderTestiSlide(true);
+            }, 'prev');
+        }
+    }
+
+    function startAutoSlide() {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+        autoSlideTimer = setInterval(nextSlide, 5000);
+    }
+
+    function pauseAutoSlide() {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+        if (pauseTimer) clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(startAutoSlide, 5000);
+    }
+
+    if (btnPrev && btnNext && testiCards.length > 0) {
+        btnPrev.addEventListener('click', function() {
+            prevSlide();
+            pauseAutoSlide();
+        });
+        btnNext.addEventListener('click', function() {
+            nextSlide();
+            pauseAutoSlide();
+        });
+        renderTestiSlide();
+        startAutoSlide();
+    }
+})();
+
 function setupClubMobileSlider() {
     let idx = 0;
     renderClubMobile(idx, 1);
     const prevBtn = document.getElementById('club-prev-mb');
     const nextBtn = document.getElementById('club-next-mb');
-    if (prevBtn) prevBtn.onclick = function() {
+    if (prevBtn) prevBtn.onclick = function () {
         const prev = (idx - 1 + clubSlides.length) % clubSlides.length;
         renderClubMobile(prev, -1);
         idx = prev;
     };
-    if (nextBtn) nextBtn.onclick = function() {
+    if (nextBtn) nextBtn.onclick = function () {
         const next = (idx + 1) % clubSlides.length;
         renderClubMobile(next, 1);
         idx = next;

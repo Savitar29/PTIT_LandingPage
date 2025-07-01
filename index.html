@@ -65,7 +65,8 @@
                                     onclick="setLang('VI')">VI</button>
                                 <button
                                     class="block w-full text-left px-4 py-2 text-[#FF4C00] hover:bg-orange-100 transition-colors duration-150"
-                                    onclick="setLang('ENG')"><a class="w-full h-full" href="index-en.html">ENG</a></button>
+                                    onclick="setLang('ENG')"><a class="w-full h-full"
+                                        href="index-en.html">ENG</a></button>
                             </div>
                         </div>
                     </div>
@@ -533,7 +534,7 @@
         </div>
     </div>
 
-    <!-- Courses Section -->
+    <!-- Courses Section Desktop -->
     <section class="bg-gradient-to-b from-[#FF7F00] to-[#FFC082] pt-16 relative courses-desktop">
         <div class="container mx-auto">
             <div class="text-center mb-8">
@@ -723,13 +724,110 @@
     <!--GẶP GỠ NHỮNG "CHIẾN BINH" NỔI BẬT CỦA NGÀNH-->
     <section class="gradient-bg pb-24 pt-16 bg-gradient-to-b from-[#FFBD71] to-[#FF8000] !important"
         style="position: relative;" id="truyencamhung">
-        
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
+            <div class="text-center mb-12">
                 <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg">GẶP GỠ NHỮNG "CHIẾN BINH" NỔI BẬT CỦA
                     NGÀNH</h2>
             </div>
-            <div class="testi-grid pl-8 pr-8">
+            <!--TRUYỀN CẢM HỨNG Desktop -->
+            <div class="flex items-center justify-between border-1 gap-8 chienbinh-desktop">
+                <!-- Nút trái -->
+                <button id="testi-prev-slide"
+                    class="w-16 h-16 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                        viewBox="0 0 24 24">
+                        <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="flex-1 testi-slide-wrap py-4 pb-8" style="min-height:350px; overflow: hidden;">
+                    <div id="testi-slide"
+                        class="flex items-center justify-center gap-12 rounded-3xl testi-slide-anim slide-active">
+                        <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover" style="min-height:600px;">
+                            <div class="testi-img-wrap">
+                                <img src="beiu1.png" alt="Đinh Thị Diễm Quỳnh">
+                                <div class="testi-name text-white border">Đinh Thị Diễm Quỳnh - Khóa D21</div>
+                            </div>
+                            <div class="testi-role text-white ">Team MCN tại META ECOM</div>
+                            <p class="testi-quote text-white">
+                                "Trải qua 4 năm học, mình vừa được học tư duy, vừa được thực chiến qua nhiều cơ hội hợp
+                                tác với doanh nghiệp và các hoạt động khác dành cho sinh viên"
+                            </p>
+                        </div>
+                        <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover" style="min-height:600px;">
+                            <div class="testi-img-wrap">
+                                <img src="khanhduy.png" alt="Nhữ Khánh Duy">
+                                <div class="testi-name text-white border ">Nhữ Khánh Duy – Khóa D20</div>
+                            </div>
+                            <div class="testi-role text-white ">Corporate Communications Intern tại Bosch Global
+                                Software Technologies Việt Nam</div>
+                            <p class="testi-quote text-white">
+                                "PTIT không chỉ dạy lý thuyết mà còn rèn mình cách suy nghĩ và hành động như một người
+                                làm truyền thông thực thụ"
+                            </p>
+                        </div>
+                        <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover" style="min-height:600px;">
+                            <div class="testi-img-wrap">
+                                <img src="hongngoc.png" alt="Nguyễn Hồng Ngọc">
+                                <div class="testi-name text-white border">Nguyễn Hồng Ngọc - Khóa D20</div>
+                            </div>
+                            <div class="testi-role text-white">PR & Internal Communication Executive tại Relipa Co.,
+                                Ltd.</div>
+                            <p class="testi-quote text-white">
+                                "Trải qua 4 năm học, mình vừa được học tư duy, vừa được thực chiến qua nhiều cơ hội hợp
+                                tác với doanh nghiệp và các hoạt động khác dành cho sinh viên"
+                            </p>
+                        </div>
+                        <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover" style="min-height:600px;">
+                            <div class="testi-img-wrap">
+                                <img src="tiendat.png" alt="Lê Tiến Đạt">
+                                <div class="testi-name text-white border">Lê Tiến Đạt - Khoá D20</div>
+                            </div>
+                            <div class="testi-role text-white ">Artist Manager tại C-Global Entertainment</div>
+                            <p class="testi-quote text-white">
+                                "Hành trình vạn dặm thì cũng bắt đầu từ một bước chân. Khi mới bắt đầu, mình cũng từng
+                                là một cậu sinh viên truyền thông PTIT"
+                            </p>
+                        </div>
+                        <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover" style="min-height:600px;">
+                            <div class="testi-img-wrap">
+                                <img src="thiyen.png" alt="Nguyễn Thị Yến">
+                                <div class="testi-name text-white border">Nguyễn Thị Yến - Khoá D17</div>
+                            </div>
+                            <div class="testi-role text-white ">Travel Content Creator</div>
+                            <p class="testi-quote text-white">
+                                "Cái duyên đưa mình đến với ngành Truyền thông đa phương tiện ở PTIT và chính nhờ những
+                                môn học thú vị của ngành này đã dẫn lối mình trở thành một Travel Content Creator từ lúc
+                                nào không hay. Mình đang được làm công việc mà mình yêu thích và sống với đam mê. Cảm ơn
+                                thầy cô và PTIT rất nhiều"
+                            </p>
+                        </div>
+                        <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover" style="min-height:600px;">
+                            <div class="testi-img-wrap">
+                                <img src="tuanminh.png" alt="Nguyễn Quốc Tuấn Minh">
+                                <div class="testi-name text-white border">Nguyễn Quốc Tuấn Minh - Khoá D17</div>
+                            </div>
+                            <div class="testi-role text-white">Content Creator tại MinhMinhMinh</div>
+                            <p class="testi-quote text-white">
+                                "Không chỉ là kiến thức mà môi trường ngành TTĐPT PTIT đã dạy cho mình cách chủ động tìm
+                                kiếm cơ hội, thêm vào đó còn cho mình những mối quan hệ tới giờ vẫn có thể hỗ trợ nhau
+                                trong công việc"
+                            </p>
+                        </div>
+                        <!-- KẾT THÚC: 6 card cũ giữ nguyên, chỉ thay đổi vị trí vào trong #testi-slide -->
+                    </div>
+                </div>
+                <!-- Nút phải -->
+                <button id="testi-next-slide"
+                    class="w-16 h-16 flex items-center justify-center rounded-full border-1 border-white bg-white/20 hover:bg-white/40 transition-all duration-200 shadow-lg">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="3"
+                        viewBox="0 0 24 24">
+                        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <!--TRUYỀN CẢM HỨNG Mobile -->
+            <div class="testi-grid pl-8 pr-8 chienbinh-mobile md:hidden">
                 <div class="testi-card bg-gradient-to-br from-[#FFEAD5] to-[#FF8000] card-hover">
                     <div class="testi-img-wrap">
                         <img src="beiu1.png" alt="Đinh Thị Diễm Quỳnh">
@@ -806,7 +904,6 @@
                     </p>
                 </div>
             </div>
-
             <!-- MOBILE SLIDER FOR TESTI -->
             <div class="testi-slider-mobile btn-mobile" style="display: none; position: relative;">
                 <div id="testi-slide-content" class="border-radius border-white" style="position: relative;">
@@ -831,12 +928,12 @@
             </div>
         </div>
 
-        <img src="line.png" class="flex item-center justify-center" style="margin: 0 auto; padding-top: 96px;">
+        <img src="line.png" class="flex item-center justify-center" style="margin: 0 auto; padding-top: 80px;">
 
         <!--Nơi thanh xuân không chỉ có deadline-->
         <div class="pt-24 deadline">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-20">
+                <div class="text-center mb-12">
                     <h2 class="text-white text-5xl font-extrabold mb-4 drop-shadow-lg uppercase">Nơi thanh xuân không
                         chỉ có deadline</h2>
                     <p class="text-white font-semibold italic text-xl mb-4 deadline-p" style="padding: 0px 150px;">Hòa
@@ -1001,7 +1098,8 @@
                         <div class="flex items-center" style="padding-bottom: 5px;">
                             <img src="footer_location.png" alt="" class="pl-2 pr-2" style="width: 45px;">
                             <a href="https://www.google.com/maps/place/Posts+and+Telecommunications+Institute+of+Technology+(PTIT)/@20.980913,105.7848416,17z/data=!3m1!4b1!4m6!3m5!1s0x3135accdd8a1ad71:0xa2f9b16036648187!8m2!3d20.980913!4d105.7874165!16s%2Fg%2F12168p16?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
-                                target="_blank" class="hover:text-white/60 transition-colors duration-200 hover:underline">Km10, Nguyễn
+                                target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200 hover:underline">Km10, Nguyễn
                                 Trãi, Mộ Lao, Hà
                                 Đông, Hà Nội</a>
                         </div>
@@ -1055,7 +1153,8 @@
                         <div class="flex" style="padding-bottom: 5px; flex-direction: row;">
                             <img src="footer_location.png" alt="" class="pl-2 pr-2" style="width: 45px;">
                             <a href="https://www.google.com/maps/place/Posts+and+Telecommunications+Institute+of+Technology+(PTIT)/@20.980913,105.7848416,17z/data=!3m1!4b1!4m6!3m5!1s0x3135accdd8a1ad71:0xa2f9b16036648187!8m2!3d20.980913!4d105.7874165!16s%2Fg%2F12168p16?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
-                                target="_blank" class="hover:text-white/60 transition-colors duration-200 hover:underline">Km10, Nguyễn
+                                target="_blank"
+                                class="hover:text-white/60 transition-colors duration-200 hover:underline">Km10, Nguyễn
                                 Trãi, Mộ Lao, Hà
                                 Đông, Hà Nội</a>
                         </div>
