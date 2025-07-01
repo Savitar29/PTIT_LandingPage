@@ -79,12 +79,9 @@ function getCurrentLanguage() {
     } else if (currentPath.includes('index.html') || htmlLang === 'vi') {
         return 'vi';
     }
-
-    // Mặc định là tiếng Việt
     return 'vi';
 }
 
-// Chọn dữ liệu phù hợp dựa trên ngôn ngữ
 const currentLang = getCurrentLanguage();
 const courseSlides = currentLang === 'en' ? courseSlidesEN : courseSlidesVI;
 
@@ -98,16 +95,13 @@ function toggleDropdown() {
 
     if (!dropdown || !arrow) return;
 
-    // Toggle trạng thái hiển thị
     const isVisible = !dropdown.classList.contains('opacity-0');
 
     if (isVisible) {
-        // Đóng dropdown
         dropdown.classList.add('opacity-0', 'invisible');
         dropdown.classList.remove('opacity-100', 'visible');
         arrow.style.transform = 'rotate(0deg)';
     } else {
-        // Mở dropdown
         dropdown.classList.remove('opacity-0', 'invisible');
         dropdown.classList.add('opacity-100', 'visible');
         arrow.style.transform = 'rotate(180deg)';
