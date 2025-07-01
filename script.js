@@ -74,7 +74,7 @@ function getCurrentLanguage() {
     const htmlLang = document.documentElement.lang;
 
     // Kiểm tra từ URL trước
-    if (currentPath.includes('doipho_en') || currentPath.includes('/en/')) {
+    if (currentPath.includes('index-en.html') || currentPath.includes('/en/')) {
         return 'en';
     } else if (currentPath.includes('index.html') || htmlLang === 'vi') {
         return 'vi';
@@ -126,7 +126,7 @@ function switchLanguage(targetLang) {
 
     let targetUrl;
     if (targetLang === 'en') {
-        targetUrl = 'index-eng.html';
+        targetUrl = 'index-en.html';
     } else {
         targetUrl = 'index.html';
     }
